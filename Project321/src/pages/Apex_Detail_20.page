@@ -1,0 +1,25 @@
+<!--
+  apex:detail : 
+  1. This will open the detail page of the record along with related list 
+  2. Attributes :
+	 SNO		Name				Type		Description	
+	 1.	        Subject				String 		1. id of the record which we want to open is passed here 
+												Example : 
+												subject="{'a012v00001wDCyG'}
+												subject="{!Account.OwnerId}"
+												subject="{!Contact.AccountId}
+												subject="{!$CurrentPage.parameters.parameterName}"
+
+	2. 			relatedList			Boolean		1. When set as true,it will display corresponding related list 
+												2. When set as false, it will hide the related list 
+
+	3. 			relatedListHover	Boolean		1. When set as true, relatedList will be displayed on the top of the 
+										   		page as hoverlinks 
+
+	4.			rendered		    Boolean		1.When set as true, component will display
+    
+-->
+
+<apex:page >
+    <apex:detail subject="{!$CurrentPage.parameters.myId}" relatedList="true" relatedListHover="true"/>
+</apex:page>

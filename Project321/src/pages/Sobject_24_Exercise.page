@@ -1,0 +1,20 @@
+<apex:page controller="Sobject_24_Exercise" lightningStylesheets="true">
+    <apex:sectionHeader title="Opportunity" subtitle="New Opprtunity"/>
+    <apex:form id="fm">
+        <apex:pageMessages />
+        <apex:pageBlock title="Opportunity">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!create}" reRender="fm"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" reRender="fm"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection collapsible="false">
+                <apex:inputField value="{!opt.Name}"/>
+                <apex:inputField value="{!opt.StageName}"/>
+                <apex:inputField value="{!opt.Amount}"/>
+                <apex:inputField value="{!opt.Type}"/>
+                <apex:inputField value="{!opt.CloseDate}"/>
+                <apex:inputField value="{!opt.NextStep}"/>
+            </apex:pageBlockSection>                    
+        </apex:pageBlock>    
+    </apex:form>    
+</apex:page>

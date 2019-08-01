@@ -1,0 +1,125 @@
+<apex:page >
+    Interface: 
+    ------------
+    1. It is a collection of un-implemented methods
+    2. It contains the signature of the service but doesnt contain the body.
+    Syntax : 
+            global/public Interface interfaceName{
+                datamembers
+                returnType MethodName(parameters);    
+            }
+            
+            Example : 
+                public interface Example{
+                    void show();
+                    void callMe(String name,Integer age);
+                }
+            
+            Note : We cannot create object for the interface.
+    
+    3. implements :
+        a. implements is a keyword 
+    	b. If a class want to use the interface ,then class has to implement the interface,
+    	c. class can implement more than one interface.
+    	d. When a class implements an interface all the methods in the interface should be defined
+    	   by the class.
+    
+    	Example : 
+    	public interface BankingServices{
+    		void deposit(String accNo, Decimal amount);
+    		void withdraw(String accNo,Decimal amount);
+    	}
+    
+    
+    	public class ICICIBank implements BankingServices{
+    		public String accNo;
+    		public Decimal balance;
+    		public ICICIBank(String accNo){
+    			this.accNo=accNo;
+    			balance=1000;
+    		}
+    		public void deposit(String accNo,Decimal amount){
+    				if(this.accNo == accNo){
+    					balance=balance+amount;
+    					System.debug('Current balance:'+balance);
+    				}
+    		}
+    		public void withdraw(String accNo,Decimal amount){
+    
+    				if(this.accNo == accNo){
+    					balance=balance-amount;
+    					System.debug('Current Balance:'+balance);
+    				}
+    		}
+    	}
+    
+    
+    Example : 
+    1. Create interface with  two methods  
+    		add(Integer aval,Integer bval);
+    		mul(Integer aval,Integer bval);
+    
+    2. Creat a class Example which implements Calculator and create a method show to 
+       print the values of aval,bval,result
+    
+ 	public interface Calculate{
+    	void add(Integer aval,Integer bval);
+    	void mul(Integer aval,Integer bval);
+    }
+    
+    public class Example implements Calculator{
+    	public Integer aval,bval,result;
+    	public void add(Integer aval,Integer bval){
+    		this.aval=aval;
+    		this.bval=bval;
+    		result=aval+bval;
+    	}
+    	public void mul(Integer aval,Integer bval){
+    		this.aval=aval;
+    		this.bval=bval;
+    		result=aval*bval;
+    	}
+    	public void show(){
+    		System.debug('Aval:'+aval);
+    		System.debug('BVal:'+bval);
+    		System.debug('Result:'+result);
+    	}
+    }
+    
+   
+    ==============================================================
+    public interface First{
+    	void show();
+    	void callMe(String name);
+    	void invoke();
+    }
+    
+    public interface Second{
+    	void show();
+    	void  display();
+    	void invoke(String name);
+    
+    }
+    
+    public class Example implements First,Second{
+    	public void show(){
+    
+    	}
+    	public callMe(String name){
+    
+    	}
+    	public void invoke(){
+    
+    	}
+    	public void invoke(String name){
+    
+    	}
+    	public void display(){
+    
+    	}
+    	
+    }
+    
+    Example e =new Example();
+    e.show()    
+</apex:page>

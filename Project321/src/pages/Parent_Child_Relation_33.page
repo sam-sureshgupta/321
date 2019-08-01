@@ -1,0 +1,63 @@
+<apex:page >
+<!--
+
+1. Account with List of Contacts 
+	List<Account> accounts =[select Name,Phone,(select LastName,firstName from Contacts) from Account ];
+
+2. Account with List of Opportunities 
+	List<Account> accounts =[select Name,Phone,(select Name,StageName from Opportunities) from Account];
+
+3. Account with list of Cases 
+	List<Account> accounts =[select Name,Phone,(select Subject,Status,Priority from Cases) from Account ];
+
+4. Account with List Orders
+	List<Account> accounts =[select Name,Phone,(select Name,OrderDate from Orders) from Account ];
+
+5. Account with List of AccountTeammember
+	List<Account> accounts =[select Name,Phone,(Select AccountId,UserId from AccountTeammembers) from Account ];
+
+6. Group with GroupMembers
+	List<Group> groups =[select Name,Type ,(select UserOrGroupId from GroupMembers) from Group ];
+
+7. Opportunity with OpportunityLineItems
+	List<Opportunity > optyList =[select Name,stageName ,(select UnitPrice,Quantity from OpportunityLineItems) from Opportunity];
+
+8. Product with PriceBookEntry
+	List<Product2> products =[select Name,Family,(select id,UnitPrice from PriceBookEntries) from Product2 ];
+
+9. Account with Task 
+
+10.Account with Events 
+
+
+11. Account : 			Payment__c 
+	 Name 			     Mode__C
+	 Phone 			     Amount__c
+	 Industry		     Customer__c : Lookup(Account)
+
+	List<Account> accounts =[select Name,Phone,Industry,(select Mode__C,Amount__C from Payments__r) from Account ];
+
+
+12.  Customer__c		Loan__c
+	   LastName__C		  Type__c
+	   FirstName__c		  Amount__c
+	   Phone__c			  Customer__c:Lookup(Customer)
+
+	List<Customer__c> customers =[select LastName__c,FirstName__c,Phone__c,(select Type__c,Amount__c from Loans__r) from Customer__C];
+
+
+13. 	Student__C			Contact
+		LastName__C			LastName__c
+		FirstName__c		FirstName__c
+		Fee__c				Student__c : Lookup(Student__c)	
+	
+    List<Student__c> students =[select LastName__c,FirstName__C,Fee__c,(select LastName__C,FirstName__c from Contacts__r) from Student__c]
+
+
+14. Write a soql to fetch all the account with contacts, opportunities ,cases 
+	
+	List<Account> accounts =[select Id,Name,Phone,(select LastName,firstName from Contacts),(select Name,StageName from Opportunities),(select Subject,Priority from Cases) from Account];
+	
+		
+-->    
+</apex:page>

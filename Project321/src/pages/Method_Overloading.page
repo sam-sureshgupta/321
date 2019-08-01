@@ -1,0 +1,88 @@
+<apex:page >
+ Method Overloading :
+ -------------------
+    1. If you define more than one method  with same name 
+    	a. with different number of parameters 
+    			  or 
+    	b. With different type of parameters 
+    			 or 
+    	c. Different order of parameters 
+    
+    then we call it as method overloading 
+    
+    Example : 
+    public class Method_Example {
+
+        public void show(){
+            System.debug('Show method with no parameters ');
+        }
+        public void show(Integer age){
+            System.debug('Integer Param :'+age);
+        }
+        public void show(String name){
+            System.debug('Name Param :'+name);
+        }
+        public void show(Integer age,String name){
+            System.debug('Integer '+age+' ==Name :'+name);
+        }
+        public void show(String name,Integer age){
+            System.debug('Name :'+name+' Age :'+age);
+        }
+	}
+    
+    Execution : 
+    Method_Example me =new Method_Example();
+    me.show();
+    me.show('Satish',34);
+    me.show(90,'Ravi');
+    
+    ==============================================================
+    Constructor OverLoading : 
+    1. If you define more than one constructor in the same class with  same name 
+    	a. With different number of parameters 
+    			or 
+    	b. With different type of parameters 
+    			or 
+    	
+    	c. With different order of parameters 
+    
+    	then we call it as Constructor overloading 
+    
+    Example : 
+    	public class Example{
+    		public Integer age;
+    		public String name;
+    		public Example(){
+    			age=90;
+    			name='Satish';
+    		}
+    		public Example(String name){
+    			this.name=name;
+    			age=90;
+    		}
+    		public Example(Integer age){
+    			this.age=age;
+    			name='Satish';
+    		}
+    		public Example(Integer age,String name){
+    			this.name=name;
+    			this.age=age;
+    		}
+    		public Example(String name,Integer age){
+    			this.name=name;
+    			this.age=age;
+    		}
+    	}
+    
+    	Execution : 
+    	Example e =new Example();
+    	System.debug(e.name);	//satish
+    	System.debug(e.age);	//90
+    
+    	Example e1 =new Example('Ravi',30);
+    	System.debug(e1.name);	// Ravi
+    	System.debug(e1.age);	//30
+  
+    	Note : It is a also called compile time polymorphism    
+    
+</apex:page>

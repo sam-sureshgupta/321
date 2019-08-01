@@ -1,0 +1,75 @@
+<!--
+Apex:PageBlock:
+-----------------
+a. This will create block on the page .
+b. We can create no page pageBlock on the same VF page 
+c. Attributes 
+	SNO		Name		Type			Description
+	-------------------------------------------------
+	1		title		String 		 	1. This string value will be displayed on the left corner 
+										   of the header for the pageBlock.
+									   
+
+	2.		helpTitle	String			1. This will be displayed as hover link on the right corner of the 
+										    header 
+										2. When some one click on the help link corresponing page will open
+										   as help document
+
+	3.		helpURL		url				1. This is the url of the page 
+										2. When we click on the helpTitle, page whoes url is defined as helpUrl
+										   will be opned
+
+	4. 		dir			String 			1, This will specify the direction in which the content should be 
+										   displayed.
+										2. Possible values are LTR(Left to Right) ,RTL (Right to Left)
+										3. Default value is LTR 
+
+	5. 		rendered	Boolean			1. When set as true, content of the pageblock will be displayed
+										2. When set as false ,content of the pageBlock will be hidden
+										3. Default value is true
+	
+	6.		tabStyle	String			1. This will specify the name of the sobject (Standard or Custom)
+											whoes tabStyle should be applied on the pageBlock
+
+	7.		mode		String 			1. This value specifies lines are drawn to separate the fields in the \
+										   body of the pageBlock.
+											a. detail	  : This will draw the colored line between the fields.
+											b. mainDetail : This will draw the colored line between the fields 
+														     with white background
+											c.	edit	  : This will not draw any lines betwen the fields
+											d. inlineEdit : This will draw colored lines between the fields 				
+															 and we click on the field and modify the field value.
+
+
+-->
+<apex:page >
+    <apex:pageBlock >
+        LastName : <br/>
+        FastName : <br/>
+    </apex:pageBlock>
+    <apex:pageBlock title="Student">
+        LastName : <br/>
+        FastName : <br/>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Student" helpTitle="needHelp?" helpUrl="/apex/Page_One" >  
+        LastName : <br/>
+        FastName : <br/>
+    </apex:pageBlock>
+    <apex:pageBlock title="Student" helpTitle="needHelp?" helpUrl="/apex/Page_One"  dir="RTL">
+        LastName : <br/>
+        FastName : <br/>
+    </apex:pageBlock>
+    <apex:pageBlock title="Employee" helpTitle="needHelp?" helpUrl="/apex/Page_One"  dir="LTR" rendered="false">
+        LastName : <br/>
+        FastName : <br/>
+    </apex:pageBlock>
+    <apex:pageBlock title="Employee" helpTitle="needHelp?" helpUrl="/apex/Page_One"  dir="LTR" tabStyle="Opportunity">
+        LastName : <br/>
+        FastName : <br/>
+    </apex:pageBlock>
+    <apex:pageBlock title="Employee" helpTitle="needHelp?" helpUrl="/apex/Page_One"  mode="mainDetail" tabStyle="Opportunity">
+        LastName : <br/>
+        FastName : <br/> 
+    </apex:pageBlock>    
+</apex:page>

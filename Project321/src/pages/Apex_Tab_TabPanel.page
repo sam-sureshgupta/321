@@ -1,0 +1,131 @@
+<!--
+    apex:tabPanel:
+    1. This is used to create a panel on the page with tabs 
+    2. Attributes : 
+        SNO     Name        Type        Description 
+        1       height      Integer     1. This will specify the height of panel
+                                        2. value can be specified in '%' or pixcel
+                                        3. Example :20% means 20% of the space in which we invoked tabpanel
+
+        2.      Width       Integer     1. This will specify the width of panel
+                                        2. value can be specified in '%' or pixcel
+                                        3. Example :20% means 20% of the space in which we invoked tabpanel
+
+        3.      swithType   String      1. This will specify the swith between the tabs 
+                                        2. Possible values 
+                                            a. client : It will take less time
+                                            b. Server : Request will go to server and generate HTML                 
+                                                        and reload the page 
+                                            c. Ajax   : Request will be sent as Ajax call using Http post 
+                                                        method 
+
+
+        4.      value       String      1. This will specify which tab should be active now .
+                                        2. This is used when we want to controller the tabSelection 
+                                            dynamically
+
+                        
+
+-->
+
+
+
+
+<apex:page >
+    <style>
+    .one{
+            background:yellow;
+            
+        }
+      .two{
+            background:grey;
+            color:black;
+            height:30px;
+        }
+        .three{
+            background:#048793;
+            color:black;
+            height:20px;
+        }
+    </style>
+    <apex:tabPanel width="70%" headerClass="one" activeTabClass="two" inactiveTabClass="three">
+        <apex:tab label="Contacts" labelWidth="200">
+        
+            LastName : <br/>
+            FirstName:  <br/>
+        </apex:tab>
+        <apex:tab label="Cases" labelWidth="100px">
+        
+            Subject : <br/>
+            Priority:  <br/>
+        </apex:tab>           
+    </apex:tabPanel>
+    <apex:sectionHeader title="Swith-Client">
+        <apex:tabPanel width="70%" switchType="client">
+        <apex:tab label="Contacts" labelWidth="200">
+            <apex:iframe src="https://www.bing.com" />
+          
+        </apex:tab>
+        <apex:tab label="Cases" labelWidth="100px">
+        
+            <apex:iframe src="https://www.satishmyla.in" />
+        </apex:tab>           
+    </apex:tabPanel>
+    
+    </apex:sectionHeader> 
+     <apex:sectionHeader title="Swith-Server">
+        <apex:tabPanel width="70%" switchType="server">
+        <apex:tab label="Contacts" labelWidth="200">
+            <apex:iframe src="https://www.bing.com" />
+          
+        </apex:tab>
+        <apex:tab label="Cases" labelWidth="100px">
+        
+            <apex:iframe src="https://www.satishmyla.in" />
+        </apex:tab>           
+    </apex:tabPanel>
+    
+    </apex:sectionHeader> 
+    
+    <apex:sectionHeader title="Swith-Ajax">
+        <apex:tabPanel width="70%" switchType="ajax">
+        <apex:tab label="Contacts" labelWidth="200">
+            <apex:iframe src="https://www.bing.com" />
+          
+        </apex:tab>
+        <apex:tab label="Cases" labelWidth="100px">
+        
+            <apex:iframe src="https://www.satishmyla.in" />
+        </apex:tab>           
+    </apex:tabPanel>
+    
+    </apex:sectionHeader>  
+    
+     <apex:sectionHeader title="headerSpacting">
+        <apex:tabPanel width="70%" switchType="ajax" headerSpacing="10">
+        <apex:tab label="Contacts" labelWidth="200">
+            <apex:iframe src="https://www.bing.com" />
+          
+        </apex:tab>
+        <apex:tab label="Cases" labelWidth="100px">
+        
+            <apex:iframe src="https://www.satishmyla.in" />
+        </apex:tab>           
+    </apex:tabPanel>
+    
+    </apex:sectionHeader>  
+   <apex:sectionHeader title="value">
+        <apex:tabPanel width="70%" switchType="client" headerSpacing="10" value="{!'case'}" >
+        <apex:tab label="Contacts" labelWidth="200" id="con">
+            <apex:iframe src="https://www.bing.com" />
+          
+        </apex:tab>
+        <apex:tab label="Cases" labelWidth="100px" id="case">
+        
+            <apex:iframe src="https://www.satishmyla.in" />
+        </apex:tab>           
+    </apex:tabPanel>
+    
+    </apex:sectionHeader>  
+    
+</apex:page>

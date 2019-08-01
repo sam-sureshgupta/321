@@ -1,0 +1,27 @@
+<apex:page >
+    {}--- > scope
+    1. When we want group of statments to run together then we put them in the scope.
+    2. We define a name for the scope depends on the context 
+    Example : 
+    3. class --Scope 
+        class Name{
+            stmt1;
+            stmt2
+        }
+    4. Scope of method 
+    	void methodName(){
+    		stmt1;
+            stmt2
+    	}
+    
+    5. scope of if 
+    		if(condition){
+    			stmt1;
+           		 stmt2
+    		}
+    
+    6.  scope of for 
+    		for(){
+    
+    		}    
+</apex:page>

@@ -1,0 +1,159 @@
+<apex:page >
+    <!--
+    Visualforce:
+    --------------
+    1. Visualforce is a framework that allows developers to build sophisticated, 
+      custom user interfaces that can be hosted natively on the Lightning platform.
+    2. Visualforce page consists of 
+    	a. visualforce markup
+    	b. Visualforce controller.
+    3. Visualforce markup
+    	a. It is tag based elements 
+    	b. It consists of 
+    		1. Visualforce Tags 
+    		   a. These are created by salesforce to build user interface.
+    			
+					<apex:page>
+					<apex:pageBlock>
+					<apex:pageBlockSection>
+				
+    		2. Scripting elements
+    			
+    			Html, javascript, ajax, jquery,node.js, angular.js react.js
+    			All the scripting elements which are supported by the browser are also supported 
+    			by visualforce pages ,
+    
+    4. Visualforce Controller: 
+    	a. These will specify the action that should be performed on the server side when user interacts 
+    	   with any of the elements in the User interface,
+    
+    	b. Visualforce controllers are classified into
+    		1. StandardController 
+    		2. StandardList Controller 
+    		3. Controller 
+    		4. Extentions
+    
+    	c. Standard Controller: 
+    		1. When we want to reffer to standard properties of any one of the object 
+    		   in the vf page then we define that object as StandardController.
+    
+    	d. StandardList Controller: 
+    		1. if we want to fetch list of records from sobject by using list view options defiend 
+    			on object then we use standardList controller
+    
+    	c. Controller :
+    		1. When we want to define custom logics using apex then we create apex classes 
+    		2. Apex classes are called controllers in the VF Page 
+    
+    	d. Extentions : 
+    		1. If you want to use standard properties and custom logics then we define extentions
+    
+    5. Where we can use this visualfroce page??
+    	a. We can override standard functionalities 
+    	b. We can create Custom buttons on standard page
+    	c. We can custom sidebar components 
+    	d. We can create custom tabs 
+    	e. We can override standard tabs and page 
+    	f. We can create Custom userinterface
+    
+    
+    6.  What are the rules we have to follow to create a VF pages 
+    	1. Every element in the VF page should obey strict xml format
+    		a. every opening element should corresponding closing elements
+				<Name> Satish</Name>
+				<div> Example</div>
+
+			b. Close element is case-sensitive to opening element 
+					<Name>	Satish </Name>
+					<name> Satish</name>
+					<NAME> Satish</NAME>
+
+			c. Inner elements should be closed before the outer elemets are closed .
+					<Student>
+						<Name>				
+							<FirstName> Satish </FirstName>
+							<LastName> Myla</LastName>
+						</Name>
+					</Student>
+
+			d. if the element has the body 
+					<Name > 	Satish </Name>
+
+				if the element doesnt have any body
+						<Name />
+						<apex:inputText />
+						<apex:outputText />
+
+
+			e. Properties : Properties of the elements are called as attributes 
+				<Student name="Satish" age="34" city="Hyd"> 
+
+				</Student>
+
+			f. every VF page will start and end with <apex:page> component
+
+			g. All the VF pages will have an extention of .Vfp
+
+
+	7. In how many ways we can create VF pages ?
+		a. Stadard Navigation 
+		b. using URL 
+		c. Developer Console
+		d. Eclipse 
+		e. Salesforce DX ( SFDX)
+		f. Metadata Soap API webservices
+
+	I. Standard navigation :
+		Setup
+		|--- > Build
+				|--- > Develop
+					   |--- > Lightning Components
+							  |--- > Visualforce Pages
+									 |--- > New 
+
+		Step 1: Enter PageName 
+		Step 2: Enter Body of the Page 
+		Step 3: Save 
+		Step 4: Preview
+
+	II. Using URL 
+		a. If you want to create a VF page using URL we need to enable development mode for 
+		   the user.
+			Setup
+			|--- > Adminster
+				   |--- > Manage Users
+						  |--- > Users
+
+			Step 1:  Choose the user 
+			Step 2:  Click one Edit Button on the selecetd user
+		    Step 3:  Enable Development Mode checkbox
+		    Step 4:  Save the user.
+
+		b. URL to open the existing VF Page 
+			https://serverinstance.salesforce.com/apex/PageName
+			Example : https://ap8.salesforce.com/apex/Page_One
+
+		c. How to create a new VF page using url 
+			https://serverinstance.salesforce.com/apex/PageName
+			a. if the page exists with given name ,then page will open.
+			b. If the page doesnt exists ,it throws error message and show the link to create the page.
+			c. When we click on the link new page will be created.
+
+			
+	III. Developer Console 
+		Navigation : 
+		User 
+		|--- > Developer Console 
+			   |--- > File 
+					  |--- > New 
+							 |--- > Visualforce Page 
+									
+		Step 1: Enter PageName
+		Step 2: Enter Body
+		Step 3: Save
+		Step 4: Preview   
+		
+
+	-->   
+    
+</apex:page>

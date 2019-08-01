@@ -1,0 +1,144 @@
+<apex:page >
+<!--
+
+1. When ever new lead is created with city as Hyd make HydTeam as owner 
+				  
+Queue : 
+Group g =[select id from Group where name ='HydTeam' and type='Queue'];
+
+trigger example on Lead (before insert){
+	List<Lead> leads =Trigger.new;
+	Group g =[select id from Group where name ='HydTeam' and type='Queue'];
+	for(Lead l:leads){
+		if(l.city=='Hyd'){
+			l.ownerId=g.id;
+		}
+	}
+}
+
+
+Example 2: 
+ When a new Account is Created with rating as Hot  Create New Opportunity with StageName as prospecting 
+   and closeDate as 15 days from today
+
+	trigger example on Account(after insert ){
+		List<Opportunity> optyList =new List<Opportunity>();
+		List<Account> accounts =Trigger.new;		
+		for(Account a: accounts){
+			if(a.rating=='Hot'){
+				Opportunity op =new Opportunity();
+				op.Name=a.Name;
+				op.StageName='Prospecting';
+				op.closeDate=System.today()+15;
+				op.AccountId=a.Id;
+				optyList.add(op);
+			}
+		}
+		insert optyList;
+	}
+
+Example :3 
+When ever new student is Created  submit the student to Faculty for Approval 
+Student :  Faculty : Lookup(User)
+	:  Approval process : StudentApproval
+	:  Submited   	    : Current User 
+Approval.ProcessSubmitRequest 
+setProcessDefinitionNameOrId(nameOrId)
+setSkipEntryCriteria(skipEntryCriteria)
+setNextApproverIds(nextApproverIds)
+setSubmiterId
+setSobjectId()
+
+
+trigger example on Student__c(after insert){
+	
+	List<Student__C> students =Trigger.new;
+	for(Student__c s :students){
+		Approval.ProcessSubmitRequest request =new Approval.ProcessSubmitRequest();
+		// Id of the record which we want to submit
+		request.setSobjectId(s.Id);
+	
+		// Name of the approval process to which we want to submit
+		request.setProcessDefinitionNameOrId('StudentApproval');
+
+		// Put all the ids of the approver 
+		Id[] approver= new Id[]{s.Faculty__c};
+		// Id of the approval to whom we are submitting
+		request.setNextApprovalIds(approver);	
+		
+		//Id of the user who is submitting the record
+		request.setSubmiterId(userinfo.getUserId());
+		
+		// skip the entry criteria
+		request.setSkipEtryCriteria(true);
+
+		// submit the record for approval processs
+		Approval.ProcessResult result =Approval.process(request);
+	}
+
+}
+
+
+Example 4: 
+When ever Account Status__C is modified to Active share the record with Record owner's Manager 
+
+trigger example on Account(after update){
+	//1. Get oldMap 	
+	Map<Id,Account> oldMap=Trigger.oldMap;
+
+	// 2. Get NewMap
+	Map<Id,Account> newMap= Trigger.newMap;
+
+	// 3. Get the keys 	
+	Set<Id>  accIds =oldMap.keySet();
+
+	// 4. Create a List of Account to store  Accounts with Active status 
+	List<Account> accounts =new List<Account>();
+
+	// 5. Create a list to store owner  of those Accounts whose status is Active 
+	List<Id> owners =new List<Id>();
+	
+	// 6. Take on by one key and check the value of Status 
+	for(Id key : accIds ){
+		// 7. Based on key get the old record 
+		Account old =oldMap.get(key);
+
+		// 8. Based on key get the new Record 
+		Account acc =newMap.get(key);
+
+		// 9. Check the status is modified 
+		if(old.Status__c !='Active' && acc.Status__c =='Active'){
+
+			accounts.add(acc);
+			owners.add(acc.ownerId);
+		}
+	}
+
+	//10. Get the managers of those owners 
+	List<User> users =[select id,Manager from user where id in :owners];
+
+	// 11. Create a Map with ownerId as key and manager as value 
+	Map<Id, Id> userMap =new Map<Id,Id>();
+	for(User u :users){
+		userMap.put(u.Id,u.Manager);
+	}
+	
+	//12. Create a AccountShare list 
+	List<AccountShare> share =new List<AccountShare>();
+
+	//13. Fetch one by one Active Account and share with manager 
+	for(Account a: accounts){
+
+		AccountShare my =new AccountShare();
+		my.accountId =a.Id;
+		Id manager=userMap.get(a.ownerId);
+		my.UserOrGroupId=manager;
+		my.RowCause='Manual';
+		my.AccountAccessLevel='Read';
+		share.add(my);
+	}
+	insert share;
+} 
+
+-->    
+</apex:page>

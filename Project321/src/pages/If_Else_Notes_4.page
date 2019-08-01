@@ -1,0 +1,261 @@
+<apex:page >
+    stmt1;
+    stmt2;
+    stmt3;
+    stmt4;
+    
+    O/P: 1,2,3,4
+    
+    stmt1;
+    stmt2;
+    if(cond)
+    	stmt3;
+    stmt4;
+    stmt5;
+   ==> Condition :true : 1,2,3,4,5
+    			 :false: 1,2,4,5
+    
+    stmt1;
+    stmt2;
+    if(cond1)
+    	stmt3;
+    stmt4;
+    stmt5
+    if(cond2)
+    	stmt6;
+    stmt7
+    stmt8
+    
+    O/P : Cond1 :true ,cond2 :true : 1,2,3,4,5,6,7,8
+    	  cond1 :true,cond2: false : 1,2,3,4,5,7,8,
+    	  Cond1 :false,cond2: true : 1,2,4,5,6,7,8
+    	  Cond1 :false,cond2:false : 1,2,4,5,7,8
+    
+    Example :
+    O/P: 1,3,4,5
+       : 1,2,3,4,5
+    	 stmt1;
+    	 if(cond)
+    		stmt2;
+    	 stmt3;
+    	 stmt4;
+    	 stmt5;
+    
+    Example : 
+    0/p: 1,2,4,5,6,8,9
+    O/P: 1,2,3,4,5,6,8,9
+    O/P: 1,2,4,5,6,7,8,9
+    stmt1;
+    stmt2;
+    if(cond)
+    	stmt3;
+    stmt4;
+    stmt5;
+    stmt6;
+    if(cond2)
+    	stmt7;
+    stmt8;
+    stmt9;
+    
+  Example : 
+    	stmt1;
+    	stmt2;
+    	stmt3;
+    	if(cond){
+    		stmt4;
+    		stmt5;
+    		stmt6;
+    	}
+    	stmt7;
+    	stmt8;
+    	stmt9;
+    O?P: true : 1,2,3,4,5,6,7,8,9
+       : false: 1,2,3,7,8,9
+    
+    Example : 
+    O/P: 1,2,3,4,5,6,7,8,9
+    O/P" 1,2,6,7,8,9
+    O/P :1,2,6,7,9
+    
+            Stmt1;
+            stmt2;
+            if(cond1){
+                stmt3;
+                stmt4;
+                stmt5;
+            }
+            stmt6;
+            sttm7;
+            if(cond2)
+                stmt8;
+            stmt9;
+    =========================================================================================
+    1. Take the employeeName,exp,salary,bonus 
+       if exp is above 5 years then set salary as 50K and bonus as 3000
+       if exp is less than or equals to 5 then set salary as 30k and bonus as 9000
+    
+    	String empName;
+    	Integer exp;
+    	Decimal salary,bonus;
+    	empName='Ravi';
+    	exp=8;
+    	salary=30000;
+    	bonus=9000;
+    	if(exp > 5){
+    		salary=50000;
+    		bonus=3000;
+    	}
+    
+    2. Take the amount ,rate,years ,intrest 
+       calculate the intrest ,if the intrest is less than 2000 then set intrest as 2000
+       and print 
+    	Amount : 
+    	Rate   : 
+    	Years  : 
+    	Intrest :
+    <!--	
+    	Decimal amount,rate,years,intrest;
+    	amount=12000;	
+    	rate=3;
+    	years=2;
+    	intrest =(amount*rate*2)/100;
+    	if(intrest <2000){
+			intrest =2000;
+        }
+		System.debug('Amount:'+amount);
+		System.debug('Rate:'+rate);
+		System.debug('Years:'+years);
+		System.debug('Intrest:'+intrest);
+  --> 
+    
+    IF_ELSE 
+    stmt1;
+    stmt2;
+    if(cond)
+    	stmt3;
+    else 
+    	stmt4;
+    stmt5;
+    stmt6;
+    
+    cond: true : 1,2,3,5,6
+    cond: false: 1,2,4,5,6
+    
+    
+    Example:
+    price,quantity,total, discount 
+    if total is more than 10k then given 10% discount else given 20% discount
+    print the discount value
+    
+    Decimal price,quantity,total,discount;
+    price=10000;
+    quantity=3;
+    total=price*quantity;
+    if(total > 12000)
+    	discount =total*0.10;
+    else 
+    	discount =total*0.20;
+    System.debug('Discount:'+discount);
+    
+    ==> 
+    stmt1;
+    stmt2;
+    stmt3;
+    if(cond){
+    	stmt4;
+    	stmt5;
+    	stmt6;
+    }else
+    	stmt7
+    stmt8;
+    stmt9;
+   cond: true : 1,2,3,4,5,6,8,9
+   Cond :false :1,2,3,7,8,9
+    
+    
+============================================================= 
+    stmt1;
+    stmt2;
+    stmt3;
+    if(cond){
+    	stmt4;
+    	stmt5;
+    	stmt6;
+    }else{
+    	stmt7
+    	stmt8;
+    }
+    stmt9;
+  
+    Cond : true : 1,2,3,4,5,6,9
+    Cond :false : 1,2,3,7,8,9
+ ========================================================
+    
+    stmt1;
+    stmt2;
+    stmt3;
+    if(cond)
+    	stmt4;
+    else{
+    	stmt5;
+    	stmt6;
+    	stmt7
+    	stmt8;
+    }
+    stmt9;
+    
+    Cond: true : 1,2,3,4,9
+    Cond :false: 1,2,3,5,6,7,8,9
+    
+    
+  ==========================================
+    1,2,3,4,5,6,7,10,11,12
+    1,2,3,8,9,10,11,12
+    stmt1;
+    stmt2;
+    stmt3;
+    if(cond){
+    	stmt4;
+    	stmt5;
+    	stmt6;
+    	stmt7;
+    }else{
+    	stmt8;	
+    	stmt9;
+    }
+    stmt10;
+    stmt11;
+    stmt12;
+    
+   =========================
+    1,2,3,4,5,6,8,9
+    1,2,7,8,9
+    stmt1;
+    stmt2;
+    if(cond){
+    	stmt3;
+    	stmt4;
+    	stmt5;
+    	stmt6;
+    }else
+    	stmt7;
+    stmt8;
+    stmt9;
+    ==============================
+    1,2,3,8,9,10
+    1,2,4,5,6,7,8,9,10
+    stmt1;
+    stmt2;
+    if(cond)
+    	stmt3;
+    else{
+    	stmt4;
+    	stmt5;
+    	stmt6;
+    	stmt7;
+    }
+    stmt8;
+    stmt9;
+    stmt10;
+   ===================================================================    
+</apex:page>

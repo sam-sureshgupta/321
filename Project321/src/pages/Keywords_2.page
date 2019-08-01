@@ -1,0 +1,11 @@
+<apex:page >
+    Keywords:
+    ---------
+    1. Keywords are the reserved words ,who meaning is pre-defined by the compiler.
+    2. Meaning of these words doesnt change irrespective of where we use.
+    3. All the keywords are in small letters.
+    
+    Example :
+    	if,else,for,while,class, interface,public ,protected,private,global, this ,static,
+    	virtual ,void,integer,long,decimal,boolean, id,blob
+</apex:page>

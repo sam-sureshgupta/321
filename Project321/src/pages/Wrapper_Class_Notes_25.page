@@ -1,0 +1,24 @@
+<!--
+    Wrapper class:
+    -----------------
+    1. it is a apex class .
+    2. It is used to create user-defined datatype.
+    3. Wrapper class contains only datamembers 
+    4. Wrapper class doesnt contain methods
+    
+    Example : 
+    1. Create a wrapper class Student with name,age,dob
+    	public class Student{
+    		public String name;
+    		public Integer age;
+    		public Date   dob;
+    	}
+    
+    	Student std;
+    	std =new Student();
+    	std.name ='Ravi';
+    	std.age=50;
+    	std.dob=Date.newInstance(2017,2,23);
+-->
+<apex:page >
+</apex:page>

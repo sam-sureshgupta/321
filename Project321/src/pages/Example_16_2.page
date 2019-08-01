@@ -1,0 +1,22 @@
+<apex:page standardController="Account">
+    <apex:sectionHeader title="Account" subtitle="{!Account.Name}" help="/apex/PageHelp"/>
+    <apex:form >
+    <apex:pageBlock title="{!Account.Name}" mode="inlineEdit">
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton value="Edit" action="{!edit}"/>
+            <apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Basic Info" collapsible="false">
+            <apex:outputField value="{!Account.Name}"/>
+            <apex:outputField value="{!Account.Industry}"/>
+            <apex:outputField value="{!Account.Phone}"/>
+            <apex:outputField value="{!Account.Rating}"/>            
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Other Details" collapsible="false" columns="1" >
+            <apex:outputField value="{!Account.Type}"/>
+            <apex:outputField value="{!Account.Ownership}"/>           
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>    
+</apex:page>

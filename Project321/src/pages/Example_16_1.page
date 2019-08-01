@@ -1,0 +1,24 @@
+<apex:page standardController="Account">
+    <apex:sectionHeader title="Account" subtitle="{!Account.Name}" help="/apex/Page_One"/>
+    <apex:form >
+        <apex:pageBlock title="{!Account.Name}">
+            
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="Edit"/>
+                <apex:commandButton value="Cancel"/>
+            </apex:pageBlockButtons>
+            
+            <apex:inlineEditSupport >
+            <apex:pageBlockSection title="Basic Info" collapsible="false">
+                <apex:outputField value="{!Account.Name}"/>
+                <apex:outputField value="{!Account.Industry}"/>
+                <apex:outputField value="{!Account.Phone}"/>
+                <apex:outputField value="{!Account.Rating}"/>
+                <apex:outputField value="{!Account.Type}"/>
+                <apex:outputField value="{!Account.Ownership}"/>
+            </apex:pageBlockSection>
+            </apex:inlineEditSupport>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

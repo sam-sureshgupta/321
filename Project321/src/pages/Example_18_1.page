@@ -1,0 +1,22 @@
+<apex:page >
+    <apex:tabPanel switchType="client" headerSpacing="10">
+        <apex:tab label="Basic details">
+            Name     :  <br/>
+            Phone    :  <br/>
+            Dob      :  <br/>        
+        </apex:tab>
+        <apex:tab label="Education">
+            Qualification     :  <br/>
+            Year              :  <br/>
+            Percentage        :  <br/>        
+        </apex:tab>
+        <apex:tab label="Experience">
+            Technology    :  <br/>
+            Experience    :  <br/>
+            Company       :  <br/>        
+        </apex:tab>
+    
+    
+    </apex:tabPanel>
+    
+</apex:page>

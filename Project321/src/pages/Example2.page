@@ -1,0 +1,14 @@
+<apex:page >
+    
+    {! 'Satish' }           <br/> <br/>
+    
+    {! 'Satish' + ' Myla'}   <br/> <br/>
+    
+    {! 10 }                 <br/> <br/>
+    
+    {! 10+30 }               <br/> <br/>
+    
+    {! ISNULL(30) }                 <br/> <br/>
+    
+    {! ISBLANK('Ravi') }    
+</apex:page>

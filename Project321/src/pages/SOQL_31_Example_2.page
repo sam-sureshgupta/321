@@ -1,0 +1,21 @@
+<apex:page controller="SOQL_31_Example_2">
+<apex:form >       
+    	<apex:pageBlock title="SOQL Example" id="pb">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Limit" action="{!limitData}" reRender="pb" />
+                <apex:commandButton value="DynamicLimit" action="{!setLimit}" reRender="pb" /> 
+                <apex:commandButton value="Offset" action="{!offsetData}" reRender="pb" />
+                <apex:commandButton value="DynamicOffset" action="{!setOffset}" reRender="pb" /> 
+                <apex:commandButton value="NameAsc" action="{!nameAsc}" reRender="pb" />
+                <apex:commandButton value="NameDesc" action="{!nameDesc}" reRender="pb" /> 
+                <apex:commandButton value="NameAscPhoneDesc" action="{!nameAscPhoneDesc}" reRender="pb" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockTable value="{!accounts}" var="a">
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.industry}" />
+                <apex:column value="{!a.rating}" />
+                <apex:column value="{!a.phone}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

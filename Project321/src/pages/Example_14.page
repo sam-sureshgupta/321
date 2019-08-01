@@ -1,0 +1,14 @@
+<apex:page >
+    <apex:sectionHeader title="Student" subtitle="New Student" help="/apex/Page_One"/>
+    <apex:form >
+        <apex:pageBlock title="Student" helpTitle="needHelp" 	helpUrl="/apex/SectionHelp" id="pb">
+              <apex:pageBlockButtons location="Bottom">
+                  <apex:commandButton value="Submit"/>
+                  <apex:commandButton value="Cancel" reRender="pb" />          
+               </apex:pageBlockButtons>
+              LastName   : <br/>
+              FirstName  : <br/>
+              Phone      : <br/>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

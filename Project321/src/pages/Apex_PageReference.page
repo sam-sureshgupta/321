@@ -1,0 +1,19 @@
+<apex:page >
+    PageReference: 
+    -----------------
+    1. It is a pre-defined apex class.
+    2. This class will reffer to any of the page
+    3. Syntax : 
+    	PageReference(url)
+    
+   		 PageReference p=new PageReference('/001/')
+    	 PageReference p=new PageReference('/001/')
+    
+
+    4. PageReference p=Page.VFPageName;
+    
+    5. If you dont define the pageReference they we call the method or link this will navigate back the 
+       same page.  
+    	
+    
+</apex:page>

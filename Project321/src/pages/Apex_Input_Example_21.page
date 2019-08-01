@@ -1,0 +1,25 @@
+<apex:page >
+    <apex:form >
+    	<apex:pageBlock title="Student" >
+            
+        	<apex:pageBlockSection title="WithOut SectionItem" >
+                <apex:outputLabel value="Name" />
+                <apex:inputText />
+                 <apex:outputLabel value="Age" />
+                <apex:inputText />                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="SectionItem" collapsible="false">
+                <apex:pageBlockSectionItem > 
+                     <apex:outputLabel value="Enter Name" /> 
+                     <apex:inputText />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Age" /> 
+                    <apex:inputText />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

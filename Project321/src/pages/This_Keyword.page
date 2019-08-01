@@ -1,0 +1,51 @@
+<apex:page >
+    This :
+    ------
+    1. this is a keyword 
+    2. When local variable and variable in the class have same name 
+       then local variable will dominate .
+    3. If you want to variable in the class to be reffered we use 
+    	this.variablename
+    Example :
+    public class This_Example {
+        public String name;		
+        public Integer age;
+        public Decimal salary;
+        public This_Example(String empName,Integer age ,Decimal salary){
+            name=empName;
+            age=age;//30
+            this.salary=salary;
+        }
+	}
+    Execute : 
+    This_Example t =new This_Example('Ravi',40,10000);
+    System.debug(t.name);		// Ravi
+    System.debug(t.age);		// null
+    System.debug(t.salary);		// 10000
+    
+    Example 1: Create a apex class Student with lastName,firstName,phone 
+    		 : Create a constructor which will take lastName,firstName,phone as 
+    		   inputparameters and assign the values the class members 
+    		 : Create a method show which will print the values of datamemebrs 
+    		 : Create a object and invoke show method
+    
+    public class Student{
+    	public String lastName;
+    	public String firstName;
+    	public String phone;
+    	public Student(String lastName,String firstName,String phone){
+    		this.lastName=lastName;
+    		this.firstName=firstName;
+    		this.phone=phone;
+    	}
+    	public void show(){
+    		System.debug('LastName:'+lastName);
+    		System.debug('FirstName:'+firstName);
+    		System.debug('Phone:'+phone);
+    	}
+    }
+    
+    Execute : 
+    	Student std =new Student('Myla','Satish','040-1234');
+    	std.show();    
+</apex:page>

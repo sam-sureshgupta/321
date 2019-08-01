@@ -1,0 +1,16 @@
+<apex:page controller="List_27_Exercise_3">
+    <apex:form >
+        <apex:pageMessages />
+    	<apex:pageBlock title="New Contact">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Add" action="{!create}" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+                <apex:inputText value="{!con.firstname}" />
+                <apex:inputField value="{!con.lastname}" />
+                <apex:inputText value="{!con.phone}" />
+                <apex:inputText value="{!con.email}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

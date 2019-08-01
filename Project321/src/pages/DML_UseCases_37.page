@@ -1,0 +1,134 @@
+<apex:page >
+<!--
+    1. Account 
+    2. Contact 
+    3. Opportunity 
+    4. Quote
+    5. Order 
+    6. Case 
+    7. Lead 
+    8. Account--Contact 
+    9. Account--Opportunity
+    10.Account--Order 
+    11.Account--Case 
+    12. Opportunity---Case 
+    13. AccountTeamMember
+    14. OpportunityTeamMember 
+    15. AccountShare
+    16. OpportunityShare
+    17. Task
+    18. Event 
+    19. User 
+    20. Group and GroupMembers 
+    21. Opportunity---OpportunityLineItem
+    22. Quote ---QuoteLineItem
+    23. Solution
+    
+    Sobject obj =new Sobject();
+    obj.FieldName1=Value 
+    obj.FieldName2=value
+    obj.fieldName3=value
+    
+    
+update sobject/Sobject[]
+-----------------------    
+1. Fetch all the accounts whose industry is Banking and update thier rating as Hot 
+    List<Account> accounts =[select id,Industry,Rating from Account where industry='Banking'];
+	for(Account a: accounts){
+    		a.rating='Hot';
+	}
+	update accounts;
+
+2. Fetch all the accounts whose rating is Warm then update thier ownership as Public 
+    List<Account> accounts =[select Id,Industry,Ownership from Account where Rating='Warm'];
+	for(Account a:accounts){
+    	a.ownership='Public';
+	}
+	update accounts;
+
+3. Fetch all those opportunities whose stageNmae is closed won re-assign those records to wilson
+    User u =[select id from User where firstName='Wilson'];
+	List<Opportunity> optyList =[select Id,StageName,OwnerId from Opportunity where stageName='Closed Won'];
+	for(Opportunity op :optyList){
+    	op.ownerId =u.Id;
+	}
+	update optyList;
+
+4. Fetch all the leads whose city is Hyd and whose createdDate is Today and assign them to the queue 
+    HydTeam
+    
+    Group g= [select id from Group where Name='HydTeam'];
+	List<Lead> leads =[select id ,OwnerId from Lead where createdDate =TODAY and city='Hyd'];
+	for(Lead l:leads){
+    	l.ownerId=g.Id;
+	}
+	update leads;
+
+delete sobject/Sobject[]
+------------------------    
+1. Fetch all those accounts whose industry is banking and delete the data 
+    List<Account> accounts =[select id from Account where industry='Banking'];
+	delete accounts;
+
+2. Delete all those accounts which are owned by wilson
+  	User u =[select id from User where firstName='Wilson'];
+	List<Account> accounts =[select id from Account where ownerId=:u.Id];
+	delete accounts;
+    
+3. Delete all those Accounts which doesnt have contacts 
+	List<Account> accounts =[select id,(select id from Contacts) from Account];
+	// fetch those accounts which doestn have contatcts 
+	List<Account> newList =new List<Account>();
+	for(Account a: accounts){
+        // a is an account 
+        // a.contacts are list of contacts associated with account
+        List<Contact> contacts =a.contacts;
+        // if there are no contacts in the list ,then add the account to newList
+        if(contacts.size() <= 0){
+            newList.add(a);
+        }
+	}
+	delete newList;
+    
+4. Delete all those Accounts which has more than two contacts 
+	//1. Fetch all the accounts with corresponding contacts 
+    List<Account> accounts =[select Id ,(select id from Contacts) from Account ];
+	//2. Create a new List of account w
+	List<Account> newList =new List<Account>();
+	// Take one by one Account 
+	for(Account a: accounts){
+        // 4. Fetch the contacts of the every account 
+        // "a" is account 
+        // "a.contacts " is list of contacts associated with account 
+    	List<Contact> contacts =a.contacts;
+        if(contacts.size()>2){
+            newList.add(a); 
+        }    
+	}
+	delete newList;
+
+undelete sobject/Sobject[]
+-------------------------    
+1. fetch all those deleted Account records and undelete 
+    // ALL ROWS : This will fetch all the records which are in sobject( Deleted but still in sobject 
+    															//  and undeleted records )
+    List<Account> accounts  =[select Id from Account where isDeleted=TRUE ALL ROWS];
+    undelete accounts;
+
+
+merge sobject1 sobject2
+    
+    List<Account> accounts =[select Id,Name from Account where name in ('DELL','HDFC')];
+	merge accounts[0] accounts[1];
+
+upsert sobject/sobject[] externalId;
+
+	Student__c std =new Student__c();
+	std.Name='Capital';
+	std.Phone__c='111-222-333';
+	std.Fee__c=90000;
+	std.Id='a002v000044onMe';
+	upsert std;
+
+ -->     
+</apex:page>

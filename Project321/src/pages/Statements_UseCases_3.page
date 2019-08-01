@@ -1,0 +1,101 @@
+<apex:page >
+    Usecase: 
+    1.What is your name ?
+    2. Satish Myla
+    3.Which book you want : 2 states
+    4.What is the price of book: 1000.00
+    5.How many books you need : 5
+    6.Total 	: 1000.00*5;
+    7.Any discount : 10% on total 
+    8.FinalAMount :Total-discount
+    Data :  name,bookName,price,noBooks,total,discount,finalPrice
+    Data		DataType		Who Gives
+    name		String 			User 
+    bookName	String			User 
+    price		Decimal			User 
+    noBooks		Integer 		User 
+    total		Decimal			System Calcualte  : noBooks*price
+    discount	Decimal			System calculates : total*0.10
+    finalPrice	Decimal			System calculates : total-discount
+    
+    Integer noBooks;
+    Decimal total,price,discount,finalPrice;
+    String name,bookName;
+    name='Satish Myla';
+    bookName='2States';
+    price=1000.00;
+    total=noBooks*price;
+    discount=total*0.10;
+    finalPrice=total-discount;
+    
+
+	UseCase :
+	1. Which college ?CBIT
+ 	2. Which year 	 : Second Year 
+    3. Which branch  : CSE 
+    4. Internal marks: 12
+    5. How many external marks:40
+	6. Total how many marks :12+40
+	7. Share your phone no Fee you have  040-1234 ,10000.00    
+    
+    Data			DataType		Who		
+    College			String 			User 	
+    Year 			String 			User 
+    branch			String 			user
+    internalMarks	Integer 		user	
+    externalMarks	Integer 		user
+    totalMarks		Integer 		System Calculates : internalMarks+externalMarks
+    phone			String 			user
+    fee				Decimal			user
+    
+    String college,year,branch,phone;
+    Integer internalMarks,externalMarks,totalMarks;
+    Decimal fee;
+    college='CBIT';
+    branch='CSE';
+    phone='040-1234';
+    internalMarks=12;
+    externalMarks=40;
+    totalMarks=internalMarks+externalMarks;
+    fee=1000.00;
+    
+    UseCase :3 
+    1. Employee Name ? Rajeev
+    2. How many years of exp ? 5
+    3. What is the salary : 10000.00
+    4. What is the da : 10% of salary 
+    5. what is the ta : 15% of salary 
+    6. Total salary  : salary+da+ta
+   
+   Name : Rajeev
+   Exp  : 5 
+   Salary:10000.00;
+   Da	 : 1000.00
+   Ta    : 1500.00
+   Total : 12500.00
+    
+   Data 			DataType 		Who
+   name				String 			user 
+   experience		Integer 		user 
+   salary			Decimal			user 
+   da				Decimal			System : salary*0.10
+   ta				Decimal			System : salary*0.10
+   total			Decimal			System : salary+ta+da
+    
+   Decimal salary,da,ta,total;
+   Integer exp;
+   String name;
+   name='Rajeev';
+   exp=5;
+   salary=10000.00;
+   da =salary*0.10;
+   ta =salary*0.15;
+   total=salary+ta+da;
+   System.debug('Name :'+name);
+   System.debug('Exp:'+exp);
+   System.debug('Salary:'+salary);
+   System.debug('DA :'+da);
+   System.debug('TA:'+ta);
+   System.debug('Total:'+total);
+    
+</apex:page>

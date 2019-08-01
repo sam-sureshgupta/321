@@ -1,0 +1,31 @@
+<apex:page >
+<!--   
+Date Literals :
+------------------
+1. Query to fetch all the leads created today 
+	List<Lead> leads = [select LastName,FirstName,Phone from Lead where createdDate =TODAY];
+
+2. Query to fetch all the leads created yesterday
+	List<Lead> leads =[select LastName,FirstName,Phone from Lead where createdDate=YESTERDAY];
+
+3. Query to fetch all the leads created in last 10 days 
+	List<Lead> leads =[select LastName,FirstName,Phone from Lead where createdDate=LAST_N_DAYS:10];
+
+4. query to fetch all the leads which are created  last week
+	List<Lead> leads =[select LastName,FirstName,Phone from Lead where createdDate=LAST_WEEK];
+
+5. Query to fetch all the leads created this week
+	List<Lead> leads =[select LastName,FirstName,Phone from Lead where createdDate=THIS_WEEK];
+
+6. Query to fetch all the leads created next week
+	List<Lead> leads =[select LastName,FirstName,Phone from Lead where createdDate=NEXT_WEEK];
+
+7. query to fetch all the leads created this month
+	List<Lead> leads =[select LastName,FirstName,Phone from Lead where createdDate=THIS_MONTH];
+
+8. Queryt to fetch all the leads which are closed in Quater
+	List<Opportunity> optyList =[select Name,StageName from Opportunity where StageName='Closed won'
+									and CloseDate =THIS_QUATER];
+-->
+    
+</apex:page>

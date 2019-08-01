@@ -1,0 +1,135 @@
+<apex:page >
+    variable:
+    -----------
+    1. It is the name given to a memory location where we can stote the data and perform the changes 
+       based on your needs.
+    
+    Example : 
+            empName
+            salary
+            a1
+            industry
+    
+    DataTypes :
+    -------------
+    1. This will specify 
+        a. How much amount of memory is given to a variable 
+        b. What type of data is stored in the variable
+        c. What is the range of the data that can be stored in a variable.
+    
+    2. DataTypes in the Apex programming 
+        a. Primitive DataTypes : 
+           Example : Ineteger,Long,Decimal,Double,Date,DateTime,Time,Id,Blob,Boolean,String
+        
+        b. Collections : (List,Set,Map)
+        c. Object Created for salesforce defined apex classes 
+        d. Object Created for user defined apex classes
+        e. Enum
+        f. Sobject( Salesforce objects standard and Custom objects)
+        
+    3. Primitive DataTypes :
+        a. Boolean : 
+           1. It will store or false value.
+           2. default value is null.
+    
+        b. Blob :
+           1. It is a collection of binary data wrapped under one name.
+           2. It is used to store images ,pdf,documents or encrypted data.
+    
+        c. Date :
+           1. This is used to store particular date in the calender 
+           2. System.today(): This will reffer to today's date .
+           3. Date.newInstance(YYYY,MM,DD) : 
+              Date dob=Date.newInstance(2018,2,25)
+              Date expDate=Date.newInstance(2013,5,19)
+    
+        d. DateTime :
+           1. This is used to store particular date and time in the calender.
+           2. System.now(): This will reffer to current date and time.
+           3. DateTime.newInstancee(YYYY,MM,DD,HRS,MINS,SECS)
+              DateTime dt =DateTime.newInstance(2019,2,23,10,30,0);
+              DateTime one =DateTime.newInstance(2017,4,25,9,45,0);
+    
+        e. Time   :
+           1. This is used to store particular instance of a time 
+           2. Time.newInstance(HRS,MINS,SECS,MSECS)
+              Time.newInstance(10,30,0,0);
+              Time.newInstance(12,10,0,0);
+    
+        f. Id     :
+           1. This will store /reffer to any valid 18 character recordId which was created by 
+              salesforce 
+    
+        g. Integer :
+            1. It is a 32 bit number .
+            2. It is used to reffer to any numerical value without decimal point.
+            
+        h.  Long   :
+            1. It is a 64 bit number 
+            2. It is used to reffer to any numerical value without decimal point.
+    
+        i.  Decimal :
+            1. It is a 32 bit number 
+            2. It is used to reffer numerical value with decimal point
+            
+        j.  Double  :
+            1. It is a 64 bit number .
+            2. It is used to reffer to numerical value with decimal point.
+    
+        k.  String  : 
+            1. It is a collections of characters surrounded by single quotes.
+            
+        l.  Object  :
+            1. Any type of data that is supported by apex, can be stored in it.
+    
+        Note : For every datatype default is null.
+    
+    
+   Example 1: Collect the data of student 
+                    Possible values         DataType        variableName
+    lastName        Myla                    String          lastName;
+    
+    firstName       Satish                  String          firstName;
+    
+    age             34                      Integer         age     
+    
+    college         CBIT                    String          college
+    
+    phone           040-1234                String          phone       
+    
+    fee             10000.00                Decimal         fee
+    
+    dob             10-2-2019               Date            dob
+    
+    city            Hyd                     String          city
+    
+    place           SRNagar                 String          place   
+    
+    rno             CBITCS001               String          rno
+    
+    
+    =========================================================================
+    Info                    Possible        DataType
+    
+    name                    ABC             String
+    
+    price                   10000.00        Decimal
+    
+    quantity                3               Integer 
+    
+    tax                     4000.00         Decimal
+    
+    manufacturedDate        10-Nov-2018     Date
+    
+    expiryDate              10-Nov-2020     Date
+    
+    
+    Syntax : Date.newInstance(YYYY,MM,DD)   
+    DataType variableName[=value];
+    
+    Integer age;
+    String name;
+    Boolean flag;
+    Integer marks=1000;
+    String city='Hyd';
+</apex:page>

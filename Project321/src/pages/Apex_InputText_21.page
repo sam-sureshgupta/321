@@ -1,0 +1,34 @@
+<apex:page >
+    <apex:sectionHeader title="InputText"/>
+    <apex:form >
+    InputText : <apex:inputText />       
+    </apex:form>
+    <apex:sectionHeader title="InputText" subtitle="Direction" description="RTL,LTR"/>
+    <apex:form >
+    InputText : <apex:inputText dir="RTL"/>       
+    </apex:form>
+    <apex:sectionHeader title="InputText" subtitle="disabled"/>
+    <apex:form >
+    InputText : <apex:inputText disabled="true"/>       
+    </apex:form>
+    <apex:sectionHeader title="InputText" subtitle="rendered"/>
+    <apex:form >
+    InputText : <apex:inputText rendered="false"/>       
+    </apex:form>
+    <apex:sectionHeader title="InputText" subtitle="MaxLength" description="This will specify the length of the data."/>
+    <apex:form >
+    InputText : <apex:inputText maxlength="5"/>       
+    </apex:form>
+    <apex:sectionHeader title="InputText" subtitle="Size" description="This will specify the size of box."/>
+    <apex:form >
+    InputText : <apex:inputText size="5"/>       
+    </apex:form>
+    <apex:sectionHeader title="InputText" subtitle="CSS Style"/>
+    <apex:form >
+    InputText : <apex:inputText style="background:yellow;color:red;"/>       
+    </apex:form>
+    <apex:sectionHeader title="InputText" subtitle="Required"/>
+    <apex:form >
+    InputText : <apex:inputText required="true"/>       
+    </apex:form>
+</apex:page>

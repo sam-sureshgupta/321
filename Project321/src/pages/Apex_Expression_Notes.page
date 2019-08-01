@@ -1,0 +1,19 @@
+<apex:page >
+   <!--
+	 if you want to print data dynamically we use expression format 
+
+	 {! expression } :result of the exprssion will be printed 
+	 a. using this expression format we call variables of the apex class 
+	 b. methods of the apex class 
+	 c. Fields of the sobject(tables)
+
+	-->
+    
+    {! 'Satish' }			<br/><br/>
+    {! 'Satish'+'Myla' } 	<br/><br/>
+    {! 10 }  				<br/><br/>
+    {! 10+30}				<br/><br/>
+    {! ISNULL(30) }			<br/><br/>
+    {! ISBLANK('Ravi') }
+    
+</apex:page>

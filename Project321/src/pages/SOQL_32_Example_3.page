@@ -1,0 +1,18 @@
+<apex:page controller="SOQL_32_Example_3">
+    <apex:form id="fm">
+        <apex:outputPanel >
+            <apex:selectList multiselect="true" style="height:150px; width:100px" value="{!selected}">
+                <apex:selectOptions value="{!fields}"/>
+            </apex:selectList>
+            <apex:commandButton value="Query" action="{!formQuery}" reRender="fm"/>
+            <br/><br/>
+            <apex:inputTextarea rows="4" cols="100" value="{!query}"/>
+        </apex:outputPanel>
+        <br/><br/>
+        <apex:dataTable value="{!accounts}" var="record" cellpadding="10" width="600" rules="rows" frame="border" rendered="{! !ISNULL(accounts)}">
+            <apex:repeat value="{!selected}" var="fld">
+                <apex:column value="{!record[fld]}"/>
+            </apex:repeat>
+        </apex:dataTable>
+    </apex:form>
+</apex:page>

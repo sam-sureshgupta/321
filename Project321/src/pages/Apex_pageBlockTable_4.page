@@ -1,0 +1,28 @@
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:form >
+    	<apex:pageBlock title="Example">
+            <apex:pageBlockTable value="{!items}" var="a">
+                
+                <apex:column value="{!a.name}" />
+                <apex:column >{!a.name}</apex:column>
+                <apex:column headerValue="CompanyName">{!a.name}</apex:column>
+                
+                <apex:column >
+                     <apex:facet name="header">
+                           <apex:inputCheckbox /> 
+                     </apex:facet>
+                            {!a.name}
+                </apex:column>
+                
+                <apex:column >
+                     <apex:facet name="footer">
+                           <apex:commandLink value="Click"/>
+                     </apex:facet>
+                            {!a.name}
+                </apex:column>               
+                
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

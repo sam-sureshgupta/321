@@ -1,0 +1,51 @@
+<apex:page standardController="Account">
+    <apex:sectionHeader title="Account" subtitle="{!account.Name}"/>
+    <apex:pageBlock >
+        
+        <apex:pageBlockSection >
+            <apex:outputField value="{!Account.Name}"/>
+            <apex:outputField value="{!Account.Phone}"/>
+            <apex:outputField value="{!Account.Industry}"/>
+            <apex:outputField value="{!Account.Rating}"/>       
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection columns="1">
+            <apex:tabPanel switchType="Client">
+                
+                <apex:tab label="Contacts">
+                    <apex:pageBlock mode="mainDetail">
+                        <apex:pageBlockTable value="{!Account.contacts}" var="a">
+                            <apex:column value="{!a.LastName}"/>
+                            <apex:column value="{!a.FirstName}"/>
+                            <apex:column value="{!a.Phone}"/>                            
+                        </apex:pageBlockTable>
+                    </apex:pageBlock>
+                </apex:tab>
+                
+                <apex:tab label="Opportunities">
+                    <apex:pageBlock mode="mainDetail">
+                        <apex:pageBlockTable value="{!Account.opportunities}" var="a">
+                            <apex:column value="{!a.Name}"/>
+                            <apex:column value="{!a.StageName}"/>
+                            <apex:column value="{!a.amount}"/>                            
+                        </apex:pageBlockTable>
+                    </apex:pageBlock>
+                </apex:tab>
+                
+                <apex:tab label="Cases">
+                    <apex:pageBlock mode="mainDetail">
+                        <apex:pageBlockTable value="{!Account.cases}" var="a">
+                            <apex:column value="{!a.Subject}"/>
+                            <apex:column value="{!a.Priority}"/>
+                            <apex:column value="{!a.status}"/>                            
+                        </apex:pageBlockTable>
+                    </apex:pageBlock>
+                </apex:tab>
+                
+            </apex:tabPanel>      
+        </apex:pageBlockSection>
+        
+        
+    
+    </apex:pageBlock>   
+</apex:page>

@@ -1,0 +1,250 @@
+<apex:page >
+  show() {
+    	x
+    	y
+    	z
+    }
+--------------    
+    Stmt1;
+    stmt2;
+    stmt3;
+    show();
+    stmt4;
+    stmt5;
+    stmt6;
+   	show();
+    stmt7;
+    stmt8;
+    show();
+    O/P  : 1,2,3,x,y,z,4,5,6,x,y,z,7,8,x,y,z 
+    
+ 
+  	function: 
+    ----------
+    1. It is a group of statements which are running together to implement a particular task.
+    2. There are four types of functions 
+    	a. without return value and without parameters 
+    	b. without return value and with parameters
+    	c. with return value and without parameters 
+    	d. with return value and with parameters.
+    
+    3. without return value and without parameters 
+    	syntax:
+    	void functionName(){
+    		logic
+    	}
+    
+		Call: functionName(); 
+    
+    	Example 1: create a function deposit and invoke it 
+    		void deposit(){
+    			logic
+    		}
+    
+    		call: deposit();
+    
+    	Example 2 create a function withdraw and invoke it 
+    			void withdraw(){
+    
+    			}
+    		call : withdraw();
+    	Exampel 3: Create a function getDetails 
+    			void getDetails(){
+    
+    			}
+    		call : getDetails();
+    	Example 4: create a function display 
+    			void display(){
+    
+    			}
+    		call : display();
+    	Example 5: Create a function createData
+    			void createData(){
+    
+    			}
+    
+    	Example 6: Create a function invoke
+    			void invoke(){
+    
+    			}
+    
+    	Example 7: Create a function setData
+    			void setData(){
+    
+    			}
+    	Example 8: Create a function  create which will print 
+    				Name : satish
+    				Age  : 34 
+    				City : Hyd 
+    	and invoke it 
+    
+    			void create(){
+    				String name='Satish';
+    				Integer age=34;
+    				String city='Hyd';
+    				System.debug('Name:'+name);
+    				System.debug('Age:'+age);
+    				System.debug('City:'+city);
+    			}
+    
+    		call ; create();
+    	Example 9: Create a function  callMe which will print all the even numbers between 1 to 100
+    		<!--
+    			 void callMe(){
+    				for(Integer i=1;i<=100;i++){
+    					Integer x=Math.mod(i,2);
+    					if(x==0)
+    						System.debug(i);
+    				}
+    			 }
+    		-->
+    	Example 10: Create a function testMe which will sum up all the odd numbers between 1 to 100
+    		<!--
+				void testMe(){
+					Integer sum=0;
+					for(Integer i=1;i<=100;i++){
+						Integer x=Math.mod(i,2);
+						if(x==1)
+							sum=sum+i;
+					}
+					System.debug('Sum'+sum);
+				}
+	
+			-->
+    
+    4.	without return value and with parameters 
+    		Syntax :
+    		void funtionName(parameters){
+    			logic
+    		}
+    
+    	Example 1: Create a function deposit with accountNo as input parameters :ICIC0001 
+    			void deposit(String accNo){
+    				logic
+    			}
+    		call : deposit('ICICI001');
+    			 : deposit('ICICI002');
+    
+    	Example 2: Create a function calculate which will take city and place as parameters 
+    			void calculate(String city,String place){
+    				System.debug('City :'+city);
+    				System.debug('Place:'+place);
+    			}
+    		Call : calculate('Hyd','SRNagar');
+    			 : calculate('Ban','WhiteField');
+    
+    	Example 3: Create a function invoke which will take age and exp as input parameters 
+    				void invoke(Integer age,Decimal exp){
+    
+    				}
+    		call : invoke(30,3.4);
+    			   invoke(40,23);
+    	Example 4: Create a function createAccount with AccountName and industry as parameters 
+    				void createAccount(String accountName, String industry){
+    
+    				}
+    
+    		call : 
+    	Example 5: Create a function callMe with name and dob as parameters 
+    				void callMe(String name,Date dob){
+    
+    				}
+    
+    		call : callMe('Satish',Date.newInstance(2019,2,23));
+    			   callMe('Ravi',System.today());
+    	Example 6: Create a function calculate which will take age and exp as inputs and 
+    				calculate salary and bonus 
+    				if age is above 40 and exp is above 10 
+    						salary is 50k and bonus is 10k
+    				else 	salary is 30k and bonus is 5k
+    <!--
+    				void calculate(Integer age,Decimal exp){
+    					 Decimal salary,bonus;
+    					 if(age > 40 && exp > 10){
+    							salary=50000;
+    							bonus=10000;
+    					 }else{
+    							salary=30000;
+    							bonus=5000;
+    					 }
+    				}
+    	-->	
+	5.  with return value and without parameters 
+		Syntax :
+			returnvalue functionName(){
+    
+    		}  
+    	Example 1: Create a function invoke which return salary	1000.00
+    			
+            Decimal invoke(){
+                Decimal salary=10000.00;
+                return salary
+            }
+    
+    		Call : 
+    		Decimal value =invoke();
+    
+    	Example 2: create a function show which will return name 
+    		String show(){
+    			String name='Satish';
+    			return name;
+    		}
+    	Example 3: Create a function invoke which will return dob
+    		Date invoke(){
+    			return System.today();
+    		}
+    
+    	Example 4: Create a function callMe which will return age ;
+    		Integer callMe(){
+    			Integer age;
+    			return age;
+    		}
+    
+    5. function with return value and parameters 
+    	returnValue functionName(parameters){
+    
+    	}
+    
+    	Example 1: Create a function calculate which will take age and exp as parameters 
+    			  and caculate ,salary bonus and return the totalAmount 
+    			 if exp is above 10 and age is above 30 
+    						salary is 50k and bonus 10k
+    			 else 	salary is 30k and bonus is 5k
+   <!-- 
+    		Decimal calculate(Integer age,Decimal exp){
+    			Decimal salary,bonus,total;
+    			if(age > 40 && exp > 10 ){
+    				salary=50000;
+					bonus=10000;
+    			}else{
+					salary=30000;			
+					bonus=5000;
+				}
+				total=salary+bonus;
+				return total;
+    		}
+
+	-->
+    
+    		Example 2: Create a function calcualte which will take internal marks and external marks 
+    				   and return total 
+    				 Integer calculate(Integer internal ,Integer external){
+    						Integer total;
+    						total=internal+external;
+    						return total;
+    				 }
+    
+    		Example 3: Create a function calculate which will take internal makrs and external makrs 
+    					and return true if total is greater than or equals 40 ,false if less than 40
+    
+    				Boolean calcualte(Integer internal,Integer external){
+    					Integer total;
+   						Boolean flag;
+    					total=internal+external;
+    					if(total >=40)
+    						flag=true;
+    					else 
+    						flag=false;
+    					return flag;
+    				}    
+</apex:page>

@@ -1,0 +1,58 @@
+<apex:page >
+    Identifiers:
+    ------------
+    1. It is a name given to a class,interface,method,variable,constant to recognize the 
+       element uniquely in the program.
+    2. Rules to define Identifier name.
+       a. Name can contain
+            1. A-Z ,a-z
+            2. 0-9
+            3. _
+            4. $
+        b. Name should not start with digit
+    
+        c. No white spaces are accepted
+    
+        Examples :
+        1ABC            ----    Name cannot start with digit---Error
+        age1            ----    Allowed
+        stud  Name      ----    Spaces are not allowed in names
+        accountName     ----    Allowed
+        invoice_List    ----    Allowed
+        my*Data         ----    * is not allowed
+    
+        
+    Naming Conventions:
+    -------------------
+    1. Upper Camel :
+       a. This namin convention is used to define the names for classes and interfaces
+       b. In this naming convention every word first letter should be Capital.
+       Example :
+        Student_Details
+        Employee_Annual_Report  
+    
+    2. Lower Camel
+        1.This naming convetion is used to define the names for methods and variables.
+        b.In this naming convention first word first letter will be small and remaining words first letter 
+          is capital
+    
+        Example :
+        stdName
+        getMyDetails
+    
+    3. Upper Case : 
+        1. This naming convention is used to define names for constants.
+        2. In this naming convention every word every letter is Capital
+        Example
+        MAX_SALARY
+        DML_EXCEPTION 
+        STUDENT_ANNUAL_REPORT
+    
+    4. Lower Case :
+        1. This naming convention is used to define keywords and packages
+        2. In this naming convention every word every letter is small.
+        Example :
+        if 
+        else 
+        mydata
+</apex:page>

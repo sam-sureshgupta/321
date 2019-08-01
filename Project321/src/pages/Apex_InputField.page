@@ -1,0 +1,14 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageBlock title="Account">
+            <apex:pageBlockSection title="Basic Info">
+                <apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.Phone}"/>
+                <apex:inputfield value="{!Account.Industry}"/>
+                <apex:inputField value="{!Account.Rating}"/>
+                <apex:inputField value="{!Account.OwnerId}"/>
+                <apex:inputField value="{!Account.MyAsset__c}"/>
+            </apex:pageBlockSection>           
+        </apex:pageBlock>    
+    </apex:form>
+</apex:page>

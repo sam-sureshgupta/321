@@ -1,0 +1,48 @@
+<apex:page controller="Apex_Example_23_7" lightningStylesheets="true" >
+    <apex:sectionHeader title="Account" subtitle="New Account" />
+    <apex:form id="pb">
+        <apex:pageMessages />
+    	<apex:pageBlock title="Account" >
+        	<apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!create}"  reRender="pb"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account" collapsible="false">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name " />
+                    <apex:inputText value="{!name}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Industry " />
+                    <apex:inputText value="{!industry}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Rating " />
+                    <apex:inputText value="{!rating}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Phone " />
+                    <apex:inputText value="{!phone}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact" collapsible="false">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Last Name " />
+                    <apex:inputText value="{!Lastname}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="FirstName " />
+                    <apex:inputText value="{!firstName}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Email" />
+                    <apex:inputText value="{!email}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="OtherPhone " />
+                    <apex:inputText value="{!otherphone}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

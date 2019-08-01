@@ -1,0 +1,54 @@
+<apex:page controller="Demo">
+    <apex:sectionHeader title="SelectList"/>
+    <apex:form id="fm">
+       <apex:selectList >
+           <apex:selectOption itemLabel="-None-" itemValue="None"/>
+           <apex:selectOption itemLabel="Hyd" itemValue="Jave"/>
+           <apex:selectOption itemLabel="Ban" itemValue="SDFC"/>
+           <apex:selectOption itemLabel="Che" itemValue="DevOps"/>  
+       </apex:selectList>      
+    </apex:form>
+    
+    <apex:sectionHeader title="SelectList" subtitle="Size" description="This will specify how many rows should be displayed"/>
+    <apex:form >
+       <apex:selectList size="1">
+           <apex:selectOption itemLabel="-None-" itemValue="None"/>
+           <apex:selectOption itemLabel="Hyd" itemValue="Jave"/>
+           <apex:selectOption itemLabel="Ban" itemValue="SDFC"/>
+           <apex:selectOption itemLabel="Che" itemValue="DevOps"/>  
+       </apex:selectList>      
+    </apex:form>
+
+    <apex:sectionHeader title="SelectList" subtitle="CSS" description="This will specify the css"/>
+    <apex:form >
+       <apex:selectList size="1" style="width:150px;">
+           <apex:selectOption itemLabel="-None-" itemValue="None"/>
+           <apex:selectOption itemLabel="Hyd" itemValue="Jave"/>
+           <apex:selectOption itemLabel="Ban" itemValue="SDFC"/>
+           <apex:selectOption itemLabel="Che" itemValue="DevOps"/>  
+       </apex:selectList>      
+    </apex:form> 
+    
+    <apex:sectionHeader title="SelectList" subtitle="value" description="This will specify the name of the  variable in which selected itemValue should be stored."/>
+    <apex:form id="one">
+       <apex:selectList size="1" style="width:150px;" value="{!selected}">
+           <apex:selectOption itemLabel="-None-" itemValue="None"/>
+           <apex:selectOption itemLabel="Hyd" itemValue="Jave"/>
+           <apex:selectOption itemLabel="Ban" itemValue="SDFC"/>
+           <apex:selectOption itemLabel="Che" itemValue="DevOps"/>  
+       </apex:selectList>
+       <apex:commandButton value="Go" reRender="one"/> {!selected} 
+    </apex:form>
+    
+    <apex:sectionHeader title="SelectList" subtitle="itemDisabled" description="This will disable the option when it is set to true."/>
+    <apex:form id="two">
+       <apex:selectList size="1" style="width:150px;" value="{!selected}">
+           <apex:selectOption itemLabel="-None-" itemValue="None"/>
+           <apex:selectOption itemLabel="Hyd" itemValue="Jave" itemDisabled="true"/>
+           <apex:selectOption itemLabel="Ban" itemValue="SDFC"/>
+           <apex:selectOption itemLabel="Che" itemValue="DevOps"/>  
+       </apex:selectList>
+       <apex:commandButton value="Go" reRender="two"/> {!selected} 
+    </apex:form>
+    
+</apex:page>

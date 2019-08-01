@@ -1,0 +1,116 @@
+<apex:page >
+<!--
+
+Aggregate Function : 
+
+1. count() : This will return count of no of records returned by the soql query.
+
+    Example : 
+
+	Integer count=[select count() from Account where Industry='Energy'];
+
+2. Count(field) : 
+
+	a.This will return the AggregateResult as return type for the soql .
+	
+	b.This will reutrn the integer value which specifies how many records contains 
+	  given field value as not null.
+	  
+	AggregateResult result=[select count(Name)names,Count(Phone)phones from Account];
+	
+	Integer namescount=(Integer)result.get('names');
+	
+	Integer phonesCount=(Integer)result.get('phones');
+	
+3. sum(field) :
+
+	a. This will return the summarized value of given field from queryResult.
+	
+	b. Soql will return you the result in the form of AggregateReult.
+	
+	AggregateResult result=[select sum(Amount)total from Opportunity where closeDate=TODAY];
+	
+	Decimal total=(Decimal)result.get('total');
+	
+	System.debug('Total :'+total);
+	
+	
+4. AVG(Fields) 
+	
+	a. This will return average  value of given field from queryResult.
+	
+	b. Soql will return you the result in the form of AggregateReult.
+	
+	AggregateResult result=[select AVG(Amount)total from Opportunity where closeDate=TODAY];
+	
+	Decimal total=(Decimal)result.get('total');
+	
+	System.debug('Total :'+total);
+	
+	
+5. MIN(Field) 
+	
+	a. This will return minimum  value of given field from queryResult.
+	
+	b. Soql will return you the result in the form of AggregateReult.
+	
+	AggregateResult result=[select MIN(Amount)minval from Opportunity where closeDate=TODAY];
+	
+	Decimal total=(Decimal)result.get('minval');
+	
+	System.debug('Total :'+total);
+	
+6.MAX(Field) 
+	
+	a. This will return maximum  value of given field from queryResult.
+	
+	b. Soql will return you the result in the form of AggregateReult.
+	
+	AggregateResult result=[select MIN(Amount)maxval from Opportunity where closeDate=TODAY];
+	
+	Decimal total=(Decimal)result.get('maxval');
+	
+	System.debug('Total :'+total)
+	
+Example : 
+ AggregateResult  result=[select SUM(Amount)total,MAX(Amount)max,MIN(Amount)min,AVG(AMount)avg
+			from Opportunity ];
+
+ Decimal total=(Decimal)result.get('total');
+ Decimal max=(Decimal)result.get('max'); 
+ Decimal min=(Decimal)result.get('min');
+ Decimal avg=(Decimal)result.get('avg');
+ System.debug('======Start=====');
+ System.debug('Total : '+total);
+ System.debug('Max :'+max);
+ System.debug('Min :'+min);
+ System.debug('Avg :'+avg);
+
+
+Note : If you are using group by clause in the soql query with Aggregate function 
+		then it will return List<AggregateResult> 
+		
+Note : If you are using group by clause we can only query fields which are part 
+	   of aggregate function or group by clause
+	
+	
+	List<AggregateResult>  resList=[select stageName,SUM(Amount)total,MAX(Amount)max,
+						MIN(Amount)min,AVG(AMount)avg from Opportunity group by StageName];
+
+	for(AggregateResult result :resList){
+		String stage=(String)result.get('stageName');
+		Decimal total=(Decimal)result.get('total');
+		Decimal max=(Decimal)result.get('max');
+		Decimal min=(Decimal)result.get('min');
+		Decimal avg=(Decimal)result.get('avg');
+		System.debug('======Start=====');
+		System.debug('Stage :'+stage);
+		System.debug('Total : '+total);
+		System.debug('Max :'+max);
+		System.debug('Min :'+min);
+		System.debug('Avg :'+avg);
+	}	
+	
+-->    
+    
+</apex:page>

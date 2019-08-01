@@ -1,0 +1,56 @@
+<!--
+apex:sectionHeader:
+1. This will create header for the page .
+2. This will be the first element in the page 
+3. Attributes 
+	SNO		Name		Type			Description
+	1.		title		string			1. This will be displayed as title for the header
+											after the image
+
+	2. 		subtitle	string 			1. This will be displayed as subtitle for the header 
+										   after the image 
+
+
+	3. 		description	String 			1. This will displayed below the image of the header as 
+										   description for the page 
+
+	4.		help		url				1. This will specify absolute /relative path of the page which
+										    should be opened when use clicks on help for this page
+
+	5.		rendered	Boolean			1. When set as true,content of the header will be displayed
+										2. When set as false, content of the header will be hidden
+										3. Default value is true
+
+	Example :1 
+	<apex:page >
+		<apex:sectionHeader  />
+	</apex:page>
+
+
+	Example :2
+	<apex:page >
+		<apex:sectionHeader title="Student" />
+
+	</apex:page>
+
+	Example :3 
+	<apex:page >
+		<apex:sectionHeader title="Student" subtitle="New Student" />
+
+	</apex:page>
+
+	Example :4 
+	<apex:page >
+		<apex:sectionHeader title="Student" subtitle="New Student" help="/apex/page_one"  
+											description="Student Registration" />
+
+	</apex:page>
+-->
+
+<apex:page >
+    <apex:sectionHeader title="Student" subtitle="New Student" description="This is first example" help="/apex/page_one"  rendered="true"/> 
+    Line one <br/>
+    Line two <br/>
+    Line Three<br/>
+    Line four
+</apex:page>

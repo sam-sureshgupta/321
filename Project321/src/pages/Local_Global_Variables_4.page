@@ -1,0 +1,90 @@
+<apex:page >
+    Local Variables: 
+    a. any variable defined with in a scope is called local variable.
+    b. It can be used only with in the scope.
+    c. We can not access the local variable outside the scope.
+    
+    Global Variables:
+    a. Any variable defined outside the scope is called global variable .
+    b. Global variables can be used inside the scope and outside the scope.
+    
+    Example 
+    
+    	Integer age ;
+    	String name;
+    	{
+    		String place;
+    		age=40;
+    		name='Prasad';
+    		place='SRNagar';
+    	}
+    
+           ==> Local variables : place
+           ==> Global variables : age ,name
+    
+   Example :2 
+    			Integer rno;
+    			Integer aval;
+First-->    	{
+    				Integer bval;
+    				Integer cval;
+    Second--->			{
+    						Integer xval;
+    						Integer yval;
+    					}
+    			}
+    
+    
+             Local variables : second : xval,yval
+             Global vaiable: : second : rno,aval,bval,cval
+                
+             Local variables : first  : bval,cval
+             Global variables: first  : rno,aval
+    
+    
+   Example : 
+    	 Integer aval;
+    	 Integer bval;
+    	 if(aval==10){
+    		bval=50;
+    		Integer cval=1000;
+    	}
+    
+    	Localvariables :if ===> cval
+    	Global variables: if===> aval,bval
+    
+    Example : 
+    	 public class Example {
+    		 public Integer age;
+    		 public Integer marks;
+    		 public void show(){
+    			String name;
+    		 }
+    		 public void callMe(){
+    			String place;
+    		 }
+    	
+    	}
+    
+    	==> show : age,marks ,name
+    	==> callMe: place,age,marks
+    
+    Example : 
+    	public class Demo{
+    		public String name;
+    		public String city;
+    		public Decimal salary;
+    		public Decimal bonus;
+    		public void calculate(Integer exp)
+    		{
+    			Decimal total;
+    		}
+    
+    		public void invoke(){
+    			Decimal ta;
+    		}
+    	}  
+    
+    	calculate : name,city,salary,bonus,exp,total
+    	invoke    : name,city,salary,bonus,ta    
+</apex:page>

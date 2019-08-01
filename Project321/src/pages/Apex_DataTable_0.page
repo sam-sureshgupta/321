@@ -1,0 +1,80 @@
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:dataTable value="{!items}" var="a">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" frame="border">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" frame="below">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>    
+   <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" frame="hsides">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+     <br/><br/>
+     <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" frame="border" rules="rows">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" frame="border" rules="cols">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" frame="border" rules="rows" cellpadding="10">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" border="1">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" border="1" cellspacing="15" cellpadding="10">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" border="1" cellspacing="15" cellpadding="10" bgcolor="grey">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <br/><br/>
+    <apex:dataTable value="{!items}" var="a" width="600" border="1" columnsWidth="100,400,100">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+</apex:page>

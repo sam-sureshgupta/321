@@ -1,0 +1,9 @@
+<apex:page standardController="Contact" recordSetVar="items">
+    <apex:pageBlock title="ContactList">
+        <apex:pageBlockTable value="{!items}" var="a">
+            <apex:column value="{!a.firstname}"/>
+            <apex:column value="{!a.lastname}"/>
+            <apex:column value="{!a.email}"/>            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

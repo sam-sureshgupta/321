@@ -1,0 +1,19 @@
+<!--
+Apex class : 
+1. If you want to define any apex class in the VF page then class should be public or global.
+2. Apex class Should have constructor without parameters or no constructor in the class.
+3. If you want to reffer to variable in the apex class ,then variable should be public or global
+4. Variable should have setter and getter method 
+5. setter : This will take data from VF page and set it variable.
+6. getter : This will take data from the apex variable and display in the VF page.
+   {set;get;}
+7. Order of execution : 
+	a. When we open the page,first object will be created for the apex class 
+	b. Constructor will run
+    c. getter method will run 
+	d. load the data in the page,
+-->
+<apex:page controller="Apex_Example_22">
+    Name : {!name} <br/> <br/>
+    City : {!city}
+</apex:page>

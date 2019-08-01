@@ -1,0 +1,79 @@
+<!--
+	apex:pageBlockSection:
+	1. This should be child element of pageBlock
+	2. This will divide the body of the pageBlock into number of sections
+		like sections in pageLayout concept
+	3. This will specify no of columns per each row.
+	4. In each column one component will be displayed.
+	5. When we say one component ,once's we open till we close it is called 
+	   one component.
+    6. PageBlock Header will come only if we give title to the pageBlockSection.
+	7.Attributes :
+		SNO		Name			Type			Description
+		------------------------------------------------------------------------------------
+		1.		title			String 			1.This will be displayed on the left corner of the 
+												   pageBlockSectionHeader
+
+		2. 		collapsible 	Boolean			1.When it is set as true,header will show collapsible icon
+												2.When it is set as false ,header will hide the collapsible icon
+
+		3. 		showHeader		Boolean			1.When it is set as true,it will display the sectionheader 
+												  with title
+												2.When it is set as false,it will hide the sectionHeader
+
+		4.		columns			Number 			1. This will specify no of columns per row 
+												2. By default each row will have two columns 
+
+		5.		rendered		Boolean			1. When it is set as true, pageBlockSection will be displayed
+												2. When it is aset as false,pageBlockSection will be hidden.
+
+		6. 		dir				String			1, This will specify direction in which content of the 	
+													pageBlockSection should be displayed
+												2. Possible values are RTL ,LTR
+	
+-->
+<apex:page >
+     <apex:pageBlock title="PageBlock" tabStyle="Opportunity">
+         <apex:pageBlockSection title="Section">
+             This is Example.         
+         </apex:pageBlockSection>  
+         <apex:pageBlockSection title="Section" showHeader="false">
+             This is Example.         
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Section" collapsible="false">
+             This is Example.         
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Section">
+             <apex:pageBlock title="one">
+                  This is one.
+             </apex:pageBlock>
+             <apex:pageBlock title="Two">
+                  This is two.
+             </apex:pageBlock>             
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Section" columns="1">
+             <apex:pageBlock title="one">
+                  This is one.
+             </apex:pageBlock>
+             <apex:pageBlock title="Two">
+                  This is two.
+             </apex:pageBlock>             
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Section" dir="RTL">
+             <apex:pageBlock title="one">
+                  This is one.
+             </apex:pageBlock>
+             <apex:pageBlock title="Two">
+                  This is two.
+             </apex:pageBlock>             
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Section" rendered="false">
+             <apex:pageBlock title="one">
+                  This is one.
+             </apex:pageBlock>
+             <apex:pageBlock title="Two">
+                  This is two.
+             </apex:pageBlock>             
+         </apex:pageBlockSection>
+     </apex:pageBlock>
+</apex:page>

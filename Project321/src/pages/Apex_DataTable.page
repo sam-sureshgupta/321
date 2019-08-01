@@ -1,0 +1,159 @@
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:sectionHeader title="BasicDataTable" />
+    <apex:dataTable value="{!items}" var="a">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="border" />
+    <apex:dataTable value="{!items}" var="a" border="1">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="width" />
+    <apex:dataTable value="{!items}" var="a" border="1" width="800">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="CellPadding" />
+    <apex:dataTable value="{!items}" var="a" border="1" width="800" cellpadding="10">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="CellSpacing" />
+    <apex:dataTable value="{!items}" var="a" border="1" width="800" cellpadding="10" cellspacing="10">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="frame-below" />
+    <apex:dataTable value="{!items}" var="a" frame="below">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="frame-above" />
+    <apex:dataTable value="{!items}" var="a" frame="above">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="frame-left" />
+    <apex:dataTable value="{!items}" var="a" frame="lhs">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="frame-right" />
+    <apex:dataTable value="{!items}" var="a" frame="rhs">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="frame-verticalSides" />
+    <apex:dataTable value="{!items}" var="a" frame="vsides">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="frame-horizontalSides" />
+    <apex:dataTable value="{!items}" var="a" frame="hsides">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="frame-border" />
+    <apex:dataTable value="{!items}" var="a" frame="border">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="rules-columns" />
+    <apex:dataTable value="{!items}" var="a" frame="border" rules="cols">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="rules-rows" />
+    <apex:dataTable value="{!items}" var="a" frame="border" rules="rows">
+        <apex:column value="{!a.name}"  headerValue="Account Name"/>
+        <apex:column value="{!a.phone}" headerValue="Phone"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="ColumnWidth" />
+    <apex:dataTable value="{!items}" var="a" frame="border" width="650" columnsWidth="250,150,150,100">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <style>
+       .odd{
+             background:white;        
+        }
+        
+        .even{
+             background:#EBF0F1;        
+        }
+    </style>
+    <apex:sectionHeader title="rowClasses" />
+    <apex:dataTable value="{!items}" var="a" frame="border" width="650" rules="rows" cellpadding="10" rowClasses="odd,even">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.phone}"/>
+        <apex:column value="{!a.industry}"/>
+        <apex:column value="{!a.rating}"/>
+    </apex:dataTable>
+    <apex:sectionHeader title="columnClasses" />
+    <apex:dataTable value="{!items}" var="a" frame="border" width="650" rules="rows" cellpadding="10" columnClasses="odd,even">
+        <apex:column value="{!a.name}" />
+        <apex:column value="{!a.phone}" />
+        <apex:column value="{!a.industry}" />
+        <apex:column value="{!a.rating}" />
+    </apex:dataTable>
+    <apex:sectionHeader title="column-HeaderValue" description="If we use Datatable we dont get header for the columns, we have to provide it manually" />
+    <apex:dataTable value="{!items}" var="a" frame="border" width="650" rules="rows" cellpadding="10" rowClasses="odd,even">
+        <apex:column value="{!a.name}" headerValue="Account Name"/>
+        <apex:column value="{!a.phone}" headerValue="Phone"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    <style>
+       .three{
+             background:#B6B9B9;        
+        }
+    </style>
+    <apex:sectionHeader title="HeaderClass" />
+    <apex:dataTable value="{!items}" var="a" frame="border" width="650" rules="rows" cellpadding="10" rowClasses="odd,even" headerClass="three">
+        <apex:column value="{!a.name}" headerValue="Account Name"/>
+        <apex:column value="{!a.phone}" headerValue="Phone"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable> 
+    
+    <apex:sectionHeader title="first" description="This will start taking the data from index 3" />
+    <apex:dataTable value="{!items}" var="a"  first="3" frame="border" rules="rows" cellpadding="10" width="600" rowClasses="odd,even" headerClass="three">
+        <apex:column value="{!a.name}" headerValue="Name"/>
+        <apex:column value="{!a.phone}" headerValue="Phone"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+    
+      <apex:sectionHeader title="rows" description="This will specify how many rows should be displayed" />
+    <apex:dataTable value="{!items}" var="a" rows="2" frame="border" rules="rows" cellpadding="10" width="600" rowClasses="odd,even" headerClass="three">
+        <apex:column value="{!a.name}" headerValue="Name"/>
+        <apex:column value="{!a.phone}" headerValue="Phone"/>
+        <apex:column value="{!a.industry}" headerValue="Industry"/>
+        <apex:column value="{!a.rating}" headerValue="Rating"/>
+    </apex:dataTable>
+</apex:page>

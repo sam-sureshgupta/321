@@ -1,0 +1,59 @@
+<apex:page controller="List_27_Exercise_1">
+ <apex:form id="fm">
+        <apex:pageMessages />
+    	<apex:pageBlock title="Accounts" id="pb" >
+           <apex:pageBlockButtons location="Bottom">
+               <apex:commandButton value="Add" action="{!addMe}" reRender="fm"/>
+            </apex:pageBlockButtons> 
+           <apex:pageBlockSection title="New Account" collapsible="false">
+                <apex:pageBlockSectionItem > 
+                     <apex:outputLabel value="Name" /> 
+                     <apex:inputField value="{!s.name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Rating" /> 
+                    <apex:inputText value="{!s.rating}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem > 
+                     <apex:outputLabel value="Phone" /> 
+                     <apex:inputText value="{!s.phone}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Type" /> 
+                    <apex:inputText value="{!s.type}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem > 
+                     <apex:outputLabel value="Industry" /> 
+                     <apex:inputText value="{!s.Industry}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Active" /> 
+                    <apex:inputText value="{!s.Active__c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>                     
+        </apex:pageBlock>
+     
+        <apex:pageBlock >
+           <apex:dataTable value="{!accounts}" var="a" cellpadding="10" width="1100" rules="rows" frame="border">
+            <apex:column headerValue="Name">
+                <apex:outputText value="{!a.name}" />
+            </apex:column>
+             <apex:column headerValue="Phone">
+                <apex:outputText value="{!a.phone}" />
+            </apex:column>
+            <apex:column headerValue="Industry">
+                <apex:outputText value="{!a.industry}" />
+            </apex:column>
+            <apex:column headerValue="Rating">
+                <apex:outputText value="{!a.rating}" />
+            </apex:column>                
+            <apex:column headerValue="Type">
+                <apex:outputText value="{!a.type}" />
+            </apex:column>
+            <apex:column headerValue="Active">
+                <apex:outputText value="{!a.Active__c}" />
+            </apex:column>     
+            </apex:dataTable> 
+        </apex:pageBlock>     
+    </apex:form>
+</apex:page>

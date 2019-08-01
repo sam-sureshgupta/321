@@ -1,0 +1,30 @@
+<apex:page controller="Map_30_Example_1">
+    <apex:form >
+        <apex:pageBlock title="Map_Example">
+            <apex:pageBlockSection columns="1" id="pbs">
+                
+                <apex:pageBlockSectionItem >
+                    
+                    <apex:outputLabel value="Cities" />
+                    
+                    <apex:selectList size="1" value="{!selected}">
+                        <apex:selectOptions value="{!cities}" />
+                        <apex:actionSupport event="onchange" action="{!fetchPlaces}" reRender="pbs" />
+                    </apex:selectList>
+                    
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    
+                    <apex:outputLabel value="Places" /> 
+                    
+                    <apex:selectList size="1" >
+                        <apex:selectOptions value="{!places}" />
+                    </apex:selectList>
+                    
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

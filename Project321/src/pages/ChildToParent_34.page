@@ -1,0 +1,30 @@
+<apex:page >
+<!--
+
+Child to Parent : 
+=====================
+1. Write the query to fetch Contcts with corresponding accoun details
+	List<Contact> contats =[select LastName,FirstName ,Account.Name,Account.Phone from Contact ];
+
+2. Write a query to fetch Opportunity with corresponding account details 
+	List<Opportunity> optyList =[select Name,Industry,Account.Name,Account.StageName from Opportunity];
+
+3. Write a query to fetch Case with corresponding Account details 
+	List<Case> cases =[select Subject,Origin,Status ,Account.Name,Account.Phone from Case ];
+
+4. Write a query to fetch opportunityLineItem with opportunity 
+
+5. Write a query to fetch quote with Opportunity details 
+
+6. Write a query to fetch payment( Mode__c,Amount__c ,Customer__c(Lookup) with corresponding 
+   Customer Data (LastName__c,firstName__c)
+	List<Payment__c> payments =[select Mode__c,Amount__c ,Customer__r.LastName__c,Customer__r.FirstName__c
+								from Payment__c ];
+
+7. Write a query to fetch Student Details (LastName__c,firstName__c,Branch(Lookup)) with corresponding 
+    branch details (Name,Phone__c
+	List<Student__c> students =[select LastName__c,FirstName__c ,Branch__r.Name,Branch__r.Phone__c from 
+										Student__c ];
+
+	-->    
+</apex:page>

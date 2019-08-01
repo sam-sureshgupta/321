@@ -1,0 +1,162 @@
+<apex:page >
+    Class : 
+    --------
+    1. Class is a collection of datamemebers and methods 
+    2. Datamembers are defined using variables
+    3. Actions are defined using methods 
+    4. Syntax 
+     	class ClassName {
+    			dataMembers 
+    			actions 
+    		}
+    5. Example : 
+  		1. Create a apex class Employee with lastName,firstName,Phone,Email
+    		class Employee{
+    			String firstName;
+    			String lastName;
+    			String phone;
+    			String email;
+    		}
+    	2. create a class Student with name,branch,age,colgName,phone 
+    			class Student{
+    					String name;
+    					String branch;
+    					Integer age;
+    					String colgName;
+    					String phone;
+    			}
+    	3. Create a class ProductInfo with prodName,price,quantity,tax,total
+    			class ProductInfo{
+    				 String prodName;
+    				 Decimal price;
+    				 Integer quantity
+    				 Decimal tax,total;
+    			}
+    
+    	4. Create a class College with no_Of_Branches,no_of_Students,city,state
+    			class College{
+    				Integer no_of_Branches,no_of_Students;
+    				String city,state;
+    			}
+    
+    	5. Create a class AccountInfo with name,industry,rating,email
+    			
+    	6. Create a class InvoiceDetails with invoiceNo,invoiceDate,companyName, amount,tax,discount
+    
+    	7. Create a class Student with name,branch,age,colgName,phone
+    	   Create a method invoke which will set the values of name,branch,age,colgName,phone
+    	   Create a method display which will print the values of name,branch,age,colgName,phone
+    			class Student{
+    					String name;
+    					String branch;
+    					Integer age;
+    					String colgName;
+    					String phone;
+    					void invoke(){
+    						name='satish';
+    						branch='CSE'
+    						age=34;
+    						colgName='CBIT';
+    						phone='040-1234';
+    					}
+    					void display(){
+    						System.debug('Name:'+name);
+    						System.debug('Branch:'+branch);
+    						System.debug('Age:'+age);
+    						System.debug('ColgName:'+colgName);
+    						System.debug('Phone:'+phone);
+    					}
+    			}	
+    		
+    		
+    	8 Create a class ProductInfo with prodName,price,quantity,tax,total
+    	  Create a method callMe which will set the values of prodName,price,quantity,tax,total
+    						total : price*quantity
+    						tax   : 10% of total 
+    					
+    	  Create a method show which will print the values of prodName,price,quantity,tax,total
+    			
+    				class ProductInfo{
+    					String prodName;
+    					Decimal price,tax,total;
+    					Integer quantity;
+    					void callMe(){
+    						prodName='IPhone';
+    						price=60000;
+    						quantity=5;
+    						total=price*quantity;
+    						tax=total*0.10;
+    					}
+    					void show(){
+    						System.debug('ProdName:'+prodName);
+    						System.debug('Price:'+price);
+    						System.debug('Quantity:'+quantity);
+    						System.debug(total:'+total);
+    						System.debug('Tax:'+tax);
+    					}
+    				}
+   
+    
+    Access Modifiers  :
+    a. global : 
+    	1. if you define any member in the program (class, method ,variable,interface) as global 
+    	   then can be accessed with in the organization and out side the organization.
+    	2. Webservice programs are defined as global.
+    
+    b. public : 
+    	1. if you define any member in the program (class,method ,variable,interface) as public
+    	   then can be accessed any where within the organization.
+    
+    	
+    c. protected :
+    	1. if you define any member in the program (class, method,variable,interface ) as protected
+    	   then can be accesed any where within the class in which they are defined and within
+    	   the inner classes or Child classes.
+    
+    d. private :
+    	1. if you define any member in the program (class, method,variable,interface ) as private
+    	   then can be accesed any where within the class in which they are defined
+    
+    	2. If you dont define any access modifier then by default it is private.
+    
+    
+    Note : classe should be defined as global or public
+    
+    Example :
+    	1. Create a apex class Employee with lastName,firstName,Phone,Email
+    		public class Employee{
+    			public String lastName,firstName,phone,email;
+    		}
+    	2. create a class Student with name,branch,age,colgName,phone 
+    		global class Student{
+    			global String name;
+    			public String branch,colgName;
+    			protected Integer age;
+    			String phone
+    		}
+    			
+    	3. Create a class ProductInfo with prodName,price,quantity,tax,total
+    			public class ProductInfo{
+    				 public String prodName;
+    				 public Decimal price;
+    				 public Integer quantity;
+    				 public Decimal tax,total;
+    				
+    			}
+    
+    	4. Create a class College with no_Of_Branches,no_of_Students,city,state
+    			 public class College{
+    				 public Integer no_of_Branches,no_Of_Students;
+    				 public String city,state;
+    				 public void callMe(){
+    					 no_of_Branches=10;
+    					 no_Of_Students=600;
+    				 }
+    				 public void show(){
+    					System.debug('Branches:'+no_Of_branches);
+    					System.debug('Students:'+no_Of_Students);
+    				 }
+    			 }
+    
+    	5. Create a class AccountInfo with name,industry,rating,email
+</apex:page>

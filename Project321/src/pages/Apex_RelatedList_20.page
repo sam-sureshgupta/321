@@ -1,0 +1,25 @@
+<!--
+	apex:relatedList : 
+	1. This will display only particular relatedlist of parentRecrod
+	2. Atrributes 
+		SNO			Name		Type		Description
+		1.			list		String		1. This will specify name of the child objects whoes data need to
+												displayed
+
+		2. 			pageSize	Integer		1. This will specify how many child records should be displayed 
+											   in the realated List 
+											2. Default value is 5
+
+		3. 			subject		String	
+
+-->
+
+<apex:page standardController="Account">
+  
+    <apex:detail subject="{!Account.Id}" relatedList="false" />
+
+    <apex:relatedList list="contacts"/>
+    <apex:relatedList list="opportunities" />
+    <apex:relatedList list="Cases" /> 
+	
+</apex:page>

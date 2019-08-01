@@ -1,0 +1,32 @@
+<!--
+List View Option :
+1.	On every sobject we have list view Options .
+2.	Option what we have selected from the list view Options Is called filter Id
+3.	Based on the filterId we get group of records, which are referred using recordSetVar
+In the VF page
+
+Example : 
+<apex:page standardController=”SobjectName” recordSetVar=”varaibleName” >
+4.	The list of records which are fetched based on filterid are displayed in the VF Page
+Using 
+a.	Apex:PageBlockTable
+b.	Apex:DataTable
+c.	Apex:DataList
+d.	Apex:Repeat
+
+
+
+
+<apex:page standardController="Student__c" >
+    <apex:pageBlock title="Example">
+    	<apex:pageBlockTable value="{!Student__c.Payments__r}" var="a">
+            <apex:column value="{!a.Mode__c}" />
+            <apex:column value="{!a.Amount__c}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
+
+--->
+
+<apex:page >
+</apex:page>

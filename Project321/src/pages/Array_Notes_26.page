@@ -1,0 +1,68 @@
+<apex:page >
+    Array : 
+    -------
+    1 It is a collection of simillar elements 
+    2.Memory is allocated sequentially for all the elements .
+    3.Elements in the array are reffered using index.
+    4.Index value starts with zero
+    ========================================
+    Syntax : DataType[] arrayname;
+    Integer[] ages;
+    Decimal[] salaries;
+    String[] places;
+    Account[] accounts;
+    Contact[] conts ;
+    
+    Static Allocation : 
+    Integer[] ages=new Integer[4];
+         0      1      2       3
+    ---------------------------------
+    |  nulll | null | null  | null  |
+    ----------------------------------
+    
+    Decimal[] salaries =new Decimal[3];
+         0       1        2    
+    -----------------------------
+    |   null  | null  |  null  |
+    ----------------------------
+    
+    Integer[] ages =new Integer[]{10,20,30,40};
+       0    1      2     3
+    ----------------------------
+    | 10  | 20  |  30  | 40   |
+    ---------------------------
+    
+    
+    String[] places =new String[]{'Hyd','Ban','Che','Pune'};
+        0       1     2      3
+    --------------------------------
+    |  Hyd   | Ban  | Che  | Pune  |
+    ---------------------------------
+    
+    
+    Create a array and assign the values dynamically:
+    1. Integer[] ages =new Integer[4];
+       ages[0]=10;
+       ages[1]=20;
+       ages[2]=30;
+       ages[3]=90;
+           0      1      2     3 
+       --------------------------------
+    	|  10   | 20   | 30   | 40   |
+    	------------------------------
+    
+    2. Create a array and insert Ravi ,Kiram hari,Prasad
+    	
+    	-----------------------------------
+    	|   Ravi  | Kiran  | Hari | Prasad | 
+    	-----------------------------------
+    	String[] names =new String[]{'Ravi','Kiran','Hari','Prasad'};
+    	
+    	String[] names =new String[4];
+    	names[0]='Ravi';
+    	names[1]='Kiran';
+    	names[2]='Hari';
+    	names[3]='Prasad';
+    
+    3. Create a array and insert 10000,50000,30000,120000      
+</apex:page>

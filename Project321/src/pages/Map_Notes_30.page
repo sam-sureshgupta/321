@@ -1,0 +1,140 @@
+<apex:page >
+   Map : 
+   ----
+    1. It is a key value pair
+    2. key should be unique
+    3. Value can be duplicate 
+    4. It can grow or decrease based on the run time requirement.
+    5. Syntax : 
+    	<!--
+			Map<Key,value> mapName;
+			1. Create the map with student name as key and age as value
+			Map<String,Integer> stdMap;
+		
+			2. Create a map with employee name as key and Salary as value 
+				Map<String,Decimal > empMap;
+
+			3. Create a map with AccountId as key and account as value 
+				Map<Id,Account> accMap;
+
+			4. Create a map with accountId as key and List of contact as value
+				Map<Id,List<Contact>> accMap;
+		-->
+    6. Initialize the map 
+    	<!--
+			Map<String,Integer> stdMap =new Map<String,Integer>( );
+			Map<Id,Account> accMap =new Map<Id,Account>();
+		-->
+
+	7. Methods : 
+    	a.  isEmpty() : This will return true, if the map is empty 
+    				  : This will return false, if the map is not-empty
+    		Example : 
+    		<!--
+				Map<Id,String> stdMap =new Map<Id,String>();
+				Boolean b =stdMap.isEmpty();
+			-->
+    
+    	b. put(key,value) : 
+    	   1. This is used to add the new elements into the map.
+    		
+    		<!--
+                Example : 
+				Map<String,Integer> stdMap =new Map<String,Integer>();
+				stdMap.put('Sam',30);
+				stdMap.put('Ram','90);
+
+				Example 2: 
+				List<Account> accounts =[select Name,Phone,Industry from Account];
+
+                // create a map which will take account name as key and Phone as value 
+               
+				Map<String,String > accMap =new Map<String,String>();
+                for(Account a: accounts){
+                    accMap.put(a.name,a.phone);
+                }
+                accMap.put('CSC','99999');
+                System.debug(accMap);
+                
+                
+                Example 3: 
+                1. Write a soql query and fetch all the opportunities 
+                2. Create a map which stores opportunityId as key and opportunity name as value
+                    
+                List<Opportunity> optyList =[select Id,Name from Opportunity];
+                Map<Id,String> optyMap =new Map<Id,String>();
+                for(Opportunity op:optyList){
+                    optyMap.put(op.Id,op.Name);
+                }
+			-->
+    
+    	c. get(key) :
+    	   1.This will return the value associated with the given key.
+    	   2. Example :
+    	   <!--
+				Map<String,Integer> stdMap =new Map<String,Integer>();
+				stdMap.put('Sam',30);
+				stdMap.put('Ram','90);
+				Integer a =stdMap.get('Sam');
+				System.debug(a);	// 30
+				Integer b =stdMap.get('Ram');
+				System.debug(b);	90
+				
+		   -->
+    	 d. keySet() : 
+    		1. This will return set of all the keys
+    		2. Example : 
+    		<!--
+				Map<String,Integer> stdMap =new Map<String,Integer>();
+				stdMap.put('Sam',30);
+				stdMap.put('Ram',90);
+				Set<String> keys =stdMap.keySet();
+				System.debug(keys);	 Sam ,Ram
+			-->
+    
+    	 e. values() :
+    		1. This will return list of values from the map 
+    		2. Example : 
+    			<!--
+					Map<String,Integer> stdMap =new Map<String,Integer>();
+					stdMap.put('Sam',30);
+					stdMap.put('Ram','90);
+					List<Integer> ages =stdMap.values();
+					System.debug(ages);	 30,90
+
+				-->
+    
+    	 f. containsKey(key): 
+    		1. This will return true ,if the map contains the given key
+    		2. Example : 
+    			<!--
+					Map<String,Integer> stdMap =new Map<String,Integer>();
+					stdMap.put('Sam',30);
+					stdMap.put('Ram','90);
+					Boolean b =stdMap.containsKey('Sam');
+					System.debug(b);	true
+					Boolean c =stdmap.conainsKeys('Hari');
+					System.debug(c);	false
+					
+				-->
+    	g. clear()  :
+    		1. This will remove all the elements from the map 
+    		2. Example : 
+    			<!--
+					Map<String,Integer> stdMap =new Map<String,Integer>();
+					stdMap.put('Sam',30);
+					stdMap.put('Ram',90);
+					stdMap.clear();
+					System.debug(stdMap);	()
+				-->
+    
+    	h. size() :
+    		1. This will return count of no of elements in the Map
+    			<!--
+					Map<String,Integer> stdMap =new Map<String,Integer>();
+					stdMap.put('Sam',30);
+					stdMap.put('Ram', 90);
+					Integer count =stdMap.size();
+					System.debug(count);	2
+				-->  
+</apex:page>

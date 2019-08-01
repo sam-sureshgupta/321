@@ -1,0 +1,32 @@
+<apex:page >
+    
+    virtual 
+    extends 
+
+   A
+|
+B extends A 	Single inheritence 
+
+
+A	B
+|	|
+---------
+   |
+   C extends A,B Multiple Inheritence 
+
+A
+|
+B extends A
+|
+C extends B	Multi-Level inheritence
+
+A	B
+|	|
+---------
+    |
+    C
+    |
+    D 		Hybrid Inheritence
+
+
+</apex:page>

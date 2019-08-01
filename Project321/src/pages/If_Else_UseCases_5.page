@@ -1,0 +1,95 @@
+<apex:page >
+    1. If industry is Energy then set rating as Hot and ownership as public
+            if(industry=='Energy'){
+                rating='Hot';
+                ownership='Public';
+            }
+    
+    2. if industry is Energy then set rating as Hot and ownership as public 
+       if industry is not Energy then set rating as cold and ownership as private 
+    	
+            if(industry =='Energy'){
+                rating='Hot';
+                ownership='Public';
+            }else{
+        		rating='Cold';
+    			ownership='Private';
+            }
+    
+    3. if industry is Energy then set rating as Hot and ownership as public 
+       if industry is Banking then set rating as Warm and ownership as private 
+       if industry is Education then set rating as cold and ownership as other 
+    		if(industry=='Energy'){
+    			rating='Hot';
+    			ownership='Public';
+    		}else{
+    			if(industry=='Banking'){
+    				rating='Warm';
+    				ownership='Private';
+    			}else{
+    				if(industry=='Education'){
+    					rating='Cold';
+    					ownership='other';
+    				}
+    			}
+    		}
+    
+    4. if stagename is Prospecting then closeDate as 15days from today
+       if stagename is quote then closeDate as 10 days from today
+       if stagename is pipeline then closeDate as 5 days from today
+       else closeDate today
+    
+       		    if( stageName=='Prospecting'){
+    				closeDate=System.today()+15;
+    			}else{
+    				 if(stageName=='Quote'){
+    					closeDate=System.today()+10;
+    				}else{
+    					if(stageName=-'PipeLine'){
+    						closeDate=System.today()+5;
+    					}else{
+    						closeDate=System.today();
+    					}
+    				}
+    			}	
+    
+    
+    5. if leadSource is Web then put industry is Banking and Active is yes 
+       if leadSource is Email then put industry as Energy and rating as warm
+       if leadSource is Phone then put industry as Education and Phone as 040-1234
+       else  industry as IT and rating as Cold.
+    
+    	if(leadSource =='Web'){
+    		 industry='Banking';
+    		 active='Yes';
+    	}else{
+    		if(leadSource=='Email'){
+    			industry='Energy';
+    			rating='Warm';
+    		}else{
+    			if(leadSource=='Phone'){
+    				industry='Education';			
+    				phone='040-1234';
+    			}else{
+    				industry='IT';
+    				rating='cold';
+    			}
+    		}
+    	}
+    
+     if_else_if
+     ----------
+    	1. if marks are above 70 first class 
+    	2. if marks are above 50 second class 
+        3. if marks are above or equals  40 pass 
+        4. if marks are less than 40 fail
+    
+    	if(marks > 70)
+    		System.debug('FirstClass');
+    	else if(marks > 50)
+    			 System.debug('Second Class');
+    		 else if( marks > =40)
+    				System.debug('Pass');
+    			   else 
+    				  System.debug('Fail');    
+</apex:page>

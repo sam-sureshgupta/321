@@ -1,0 +1,16 @@
+<apex:page controller="List_27_Example_2">
+    <apex:form >
+    <apex:dataTable value="{!accounts}" var="a" cellpadding="10" rules="rows" frame="border" width="800">
+        <apex:column >
+            <apex:facet name="header" >
+                <apex:inputCheckbox />
+            </apex:facet>
+            <apex:inputCheckbox value="{!a.flag}"/>
+        </apex:column>
+        <apex:column value="{!a.name}"  headerValue="Name" />
+        <apex:column value="{!a.Phone}"  headerValue="Phone" />
+        <apex:column value="{!a.Industry}"  headerValue="Industry" />
+        <apex:column value="{!a.Amount}"  headerValue="Amount" />
+    </apex:dataTable>
+   </apex:form>    
+</apex:page>

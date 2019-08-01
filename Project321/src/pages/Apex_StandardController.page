@@ -1,0 +1,67 @@
+<!--
+sobject(salesforce object): 
+---------------------------
+1. Any table(object) created in the database of the salesforce is reffered as sobject in the apex programming
+2. Sobject can be standard object or custom object
+3. Example :
+		Account 
+		Contact 
+		Customer__c
+		Loan__c
+
+StandardController:
+--------------------
+1. If you want to reffer to properties of any sobject in the VF page then we define that 
+   sobject as standardController in apex:page.
+2. Example : 
+		standardController ="Account" 
+		standardController="Contact"
+		StandardController="Customer__c"
+		standardController="Loan__C"
+
+3. We can define only one sobjet as standardController
+4. If you want to reffer to the fields of the sobject in the VF page using standardController
+		Sobject			Field			Expression
+		---------------------------------------------------
+		Standard		Standard		{! SobjectName.FieldName}
+
+		Standard		Custom			{! SobjectName.FieldName__c}
+
+		Custom			Standard		{! SobjectName__c.FieldName}
+		
+		Custom			Custom			{! SobjectName__c.FieldName__c}
+
+5. Example : 
+		{! Account. Name } 
+		{! Account. Active__c}
+		{! Customer__c.Name}
+		{! Customer__c.LastName__C}
+
+6. If the field is lookup  then 
+	SNO		Sobject		LookupField		Expression
+	-----------------------------------------------------------------
+	1		Standard	Standard 		{!SobjectName.FieldNameId}
+		Example :
+			Account 	Owner 			{! Account.OwnerId}
+			Contact 	Account			{! Contact.AccountId}
+
+	2		Standard 	CustomField		{! SobjectName.FieldName__c}
+		Example 
+			Account		MyContact__c	{! Account.MyContact__c}
+			Contact 	Company__c		{! Contact.Company__c}
+
+	3		Custom		Standard		{! SobjectName__c.FieldNameId}
+		Example :
+			Customer__c	 owner			{! Customer__c.ownerId}
+			Loan__c		 CreatedBy		{! Loan__c.CreatedById}
+
+	4		Custom		Custom			{! SobjectName__c.FieldName__c}
+		Example 
+			Loan__C		Payment__C		{! Loan__c.Payment__c}
+			Loan__C		Customer__c		{! Loan__c.Customer__c}
+			
+
+-->
+
+<apex:page >
+</apex:page>

@@ -1,0 +1,91 @@
+<apex:page >
+    static:
+    -----------
+    1. Static is a keyword .
+    2. It will used along with variables and methods
+    3. Static variables :
+    	a. If you define variable as static ,memory will be allocated only once's 
+    	   i.e at the time of loading the class.
+    	b. Static variable are reffered using class name.
+    	c. Static variable are common to all the objects and every object can modify and access the 
+    	   static data .
+    	
+    	d. Non-Static variable are specific to object,they will be defined no of times depending on 
+    	   no of objects created .
+    	
+    	Example :
+    	public class Static_Example {
+            public static Integer aval=0;
+            public Integer bval=0;
+            public void add(){
+                aval=aval+10;
+                bval=bval+10;
+            }
+		}
+    
+    	Execution:
+    	Static_Example one =new Static_Example();
+        Static_Example two =new Static_Example();
+        System.debug('Aval:'+Static_Example.aval);
+        System.debug('One Bval:'+one.bval);
+        System.debug('Two Bval:'+two.bval);
+        one.add();
+        System.debug('Aval:'+Static_Example.aval);
+        System.debug('One Bval:'+one.bval);
+        System.debug('Two Bval:'+two.bval);
+        one.add();
+        System.debug('Aval:'+Static_Example.aval);
+        System.debug('One Bval:'+one.bval);
+        System.debug('Two Bval:'+two.bval);
+        two.add();
+        System.debug('Aval:'+Static_Example.aval);
+        System.debug('One Bval:'+one.bval);
+        System.debug('Two Bval:'+two.bval);
+
+    O/P : Aval : 0
+    	  One Bval:0
+    	  Two Bval:0
+    	  Aval : 10
+    	  One Bval:10
+    	  Two Bval:0
+    	  Aval : 20
+    	  One Bval:20
+    	  Two Bval:0		
+    	  Aval : 30
+    	  One Bval:20
+    	  Two Bval:10
+    
+    4. Static Methods : 
+    	a. if you define any method as static ,then method will be called using class name.
+    	b. In the static method only static variables of the class are used 
+    		syntax  : accessModifier static returnType methodName(parameters){
+    	
+    				  }
+    
+    		Execution : 
+    		ClassName.methodName();
+    
+    
+    	Example : Create class to collect Student details (Branch,ColgName,Name,age) 
+    			: Create a Constructor which will take name and age as parameters and assgin 
+    			: Create a method show which will print the datamebers
+    			: Create a object and invoke show
+    		
+    		public class Student{
+    			public Static String  branch,colgName;
+    			public String name;	
+    			public Integer age;
+    			public Student(String name, integer age){		
+    				this.name=name;	
+    				this.age=age;
+    				branch='CSE';
+    				colgName='CBIT';
+    			}
+    			public void show(){
+    				System.debug('Name:'+name);
+    				System.debug('Age :'+age);
+    				System.debug('Branch:'+branch);
+    			}
+    			
+    		}
+</apex:page>

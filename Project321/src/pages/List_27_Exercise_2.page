@@ -1,0 +1,13 @@
+<apex:page controller="List_27_Exercise_2">
+    <apex:form >
+    <apex:dataTable value="{!accdata}" var="a" cellpadding="10" rules="rows" frame="border" width="800">
+        <apex:column >
+            <apex:facet name="header" ><apex:inputCheckbox /></apex:facet>
+            <apex:inputCheckbox value="{!a.flag}"/>
+        </apex:column>
+        <apex:column value="{!a.acc.name}"  headerValue="Name" />
+        <apex:column value="{!a.acc.phone}"  headerValue="Phone" />
+        <apex:column value="{!a.acc.industry}"  headerValue="Industry" />
+    </apex:dataTable>
+   </apex:form>    
+</apex:page>

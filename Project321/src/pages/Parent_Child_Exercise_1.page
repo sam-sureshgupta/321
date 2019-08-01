@@ -1,0 +1,19 @@
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:form >
+       
+          <apex:dataTable value="{!items}" var="a" width="800"  cellpadding="10" rules="columns">             
+              <apex:column headervalue="Accounts with Contacts">
+                  
+                    <apex:sectionHeader title="{!a.Name}" subtitle="Contacts"/>     
+                    <apex:dataTable value="{!a.contacts}" var="con" cellpadding="20">
+                        <apex:column value="{!con.firstname}" headerValue="First Name"/>
+                        <apex:column value="{!con.lastname}" headerValue="Last Name"/>
+                        <apex:column value="{!con.phone}" headerValue="Phone"/>
+                        <apex:column value="{!con.email}" headerValue="Email"/> 
+                     </apex:dataTable>                  
+                  
+              </apex:column>                 
+          </apex:dataTable>
+      
+    </apex:form>
+</apex:page>

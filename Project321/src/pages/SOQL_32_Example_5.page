@@ -1,0 +1,21 @@
+<apex:page controller="SOQL_32_Example_5">
+    <apex:form >
+        <br/><br/>
+    	<apex:outputPanel style="width:1000px; height:40px; padding:10px; border:1px solid grey; margin-top:50px;">
+            Name : <apex:inputText value="{!accName}" /> 
+            &nbsp;&nbsp;&nbsp;
+            Rating : <apex:inputText value="{!accRating}" />
+            &nbsp;&nbsp;&nbsp;
+            <apex:commandButton value="Search" action="{!search}" reRender="fm"/>
+        </apex:outputPanel>
+        <br/><br/><br/><br/>
+        <apex:outputPanel id="fm">
+        	<apex:dataTable value="{!accounts}" var="a" rules="rows" width="600" frame="border" cellpadding="10" rendered="{!accounts.size>0}">
+                <apex:column value="{!a.name}" headerValue="Name" />
+                <apex:column value="{!a.Phone}" headerValue="Phone" />
+                <apex:column value="{!a.Industry}" headerValue="Industry" />
+                <apex:column value="{!a.Rating}" headerValue="Rating" />
+            </apex:dataTable>
+        </apex:outputPanel>
+    </apex:form>    
+</apex:page>

@@ -1,0 +1,46 @@
+<apex:page >
+<!--
+1. Exercise:  A. Create array and insert 5 integer values
+              B. Print the sum of even numbers.
+
+    Integer total=0;
+
+    Integer[] numbers = new Integer[]{10,21,30,43}; 
+        
+        for(Integer a:numbers){
+            Integer x=Math.mod(a,2);
+            if(x==0){
+                total=total+a;
+            }
+        }    
+
+    System.debug(total); 
+
+==> Output: 40
+
+2. Exercise: Create a array of Accounts
+    
+   Account[] accounts = new Account[4];
+
+   Account a1 = new Account(Name='Wipro',Phone='1234');
+   accounts[0]=a1;
+
+   Account a2 = new Account();
+   a2.Name='TCS'
+   a2.Phone='45678';
+   accounts[1]=a2;
+   
+   accounts[2]= new Account();
+   account[2].Name='Capital';
+   accounts[2].Phone='67890';
+
+---------------------------
+Account a1=new Account(Name='Wipro',Phone='1234');
+Account a2=a1;
+System.debug(a2.name);
+System.debug(a2.phone);
+a2.industry='Technology';
+System.debug(a1.industry);
+----------------------------
+-->    
+</apex:page>

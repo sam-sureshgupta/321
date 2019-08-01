@@ -1,0 +1,168 @@
+<apex:page >
+    					DataType		Type			variable		Type
+    
+    Integer age			Integer 		Primitive		age				Primtive variable
+    
+    String name			String			Primitive		name			Primitive variable		
+    
+    Decimal salary		Decimal			Primitive		salary			Primitive variable
+    
+    Example e			Example			Non-Primitive	e				Refference variable
+    
+    Student std			Student			Non-Primitive	std				Refference 
+    
+    Account acc 		Account 		Nont-Primitive	acc				Refference
+    
+    Contact con			Contact			Non-Primitive	con				Refference
+    
+    Boolean b			Boolean			Primitive		b				Primitive 
+    
+    Object : 
+    ========
+    1. It is a intance of a class .
+    2. Syntax  :
+    	ClassName refVariable=new ClassName();
+    	|		  |			  |	   |
+    	3		  4			  1	   2
+    						
+    1. new : new is a keyword which will create instance(object) of class .
+    
+    2. Constructor: once the object is created contructor will be called automatically
+    			  : This is used to initialize the data .
+    
+    3. ClassName  : This is datatype of the refference variable 
+    			  : This should be exactly the same class for which we are creating object
+    
+    4. refVariable: This will reffer to the object which was created by new keyword.
+    			  : generally we call it as object variable
+    
+    
+    Example :
+    		public class Student{
+    			public String name ;
+    			public Integer age;
+    			public Student(){
+    				name='Ravi';
+    				age=40;
+    			}
+    			public void show(){
+    				System.debug('Name :'+name);
+    				System.debug('Age :'+age);
+    			}
+    		}
+    
+    		Execution :
+    		Student std =new Student();
+    		std.show();
+    		std.name='Satish';
+    		std.age=90;
+    		std.show();
+    
+    
+   1. Create a apex class Student which will collect the data of CSE studets of CBIT college 
+    		name,age,branch,colgName
+    
+   2. Create a constructor and assign the value of branch, colgName
+    
+   3. Create a method show which will display the value of  name,age,branch,colgName
+    
+   4. Create a object for the class and assign name as divya ,age as 30  and print 
+    
+   5. Create a object for the class and assign name as ravi and as 32 and print
+    
+   
+    public class Student {
+    	public String name,branch,colgName;
+    	public Integer age;
+    	public Student(){
+    		branch='CSE';
+    		colgName='CBIT';
+    	}
+    	public void show(){
+    		System.debug('Name:'+name);
+    		System.debug('Age:'+age);
+    		System.debug('Branch:'+branch);
+    		System.debug('ColgName:'+colgName);
+    	}
+    }
+   
+    Execute  :
+    	Student std1 =new Student();
+    	std1.name='Divya';
+    	std1.age=30;
+    	std1.show();
+    
+    	Student std2 =new Student();
+    	std2.name='Ravi';
+    	std2.age=32;
+    	std2.show();
+    	std2.show();
+    	std2.show();
+    
+    o/p : Name 		: Divya
+    	  Age 		: 30 
+    	  Branch 	: CSE 
+    	  ColgName  : CBIT
+    
+    	  Name 		: Ravi
+    	  Age 		: 32
+    	  Branch 	: CSE 
+    	  ColgName  : CBIT
+    
+    	  Name 		: Ravi
+    	  Age 		: 32
+    	  Branch 	: CSE 
+    	  ColgName  : CBIT
+    	
+    	  Name 		: Ravi
+    	  Age 		: 32
+    	  Branch 	: CSE 
+    	  ColgName  : CBIT
+    
+    
+    Example 2: 
+    1. Create a apex class which will collect (empName,salary,companyname,branch) of Wipro company 
+       of Mindtree branch 
+    
+    2. Create a method calculate which will take exp as inputparameter and calculate the salary 
+    		if exp above 5 years then salary is 50k 
+    		else salary is 30k 
+    
+    3. Create a show method which will display the data 
+    
+    4. Create a object and assign name as Pramod and invoke the calculate method with exp as 8
+    
+    5. Creat a object and assign  name as Raghav and invoke the calculate method with exp as 3
+    
+    	public class Employee{
+    		public String empName,companyName,branch;
+    		public Decimal salary;
+    		public Employee(){
+    			companyName='Wipro';
+    			branch='MindTree';
+    		}
+    		public void calculate(Integer exp){
+    			if(exp > 5)
+    				salary=50000;
+    			else 
+    				salary=30000;
+    		}
+    		public void show(){
+    			System.debug('Name :'+empName);
+    			System.debug('CompanyName:'+companyName);
+    			System.debug('Branch:'+branch);
+    			System.debug('Salary:'+salary);
+    		}
+    	}
+    
+    	Execution : 
+    	Employee emp =new Employee();
+    	emp.empName='Pramod';
+    	emp.calculate(8);
+    	emp.show();
+    
+    	Employee e =new Employee();
+    	e.empName='Raghav';
+    	e.calculate(3);
+    	e.show();
+</apex:page>

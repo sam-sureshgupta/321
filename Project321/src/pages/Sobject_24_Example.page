@@ -1,0 +1,35 @@
+<apex:page controller="Sobject_24_Example" lightningStylesheets="true">
+    <apex:sectionHeader title="Account" subtitle="New Account" />
+    <apex:form id="pb">
+        <apex:pageMessages />
+    	<apex:pageBlock title="Account" >
+        	<apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!create}"  reRender="pb"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account" collapsible="false">
+
+                    <apex:inputField value="{!acc.name}" />
+
+                    <apex:inputField value="{!acc.industry}" /> 
+
+                    <apex:inputField value="{!acc.rating}" />
+
+                    <apex:inputField value="{!acc.phone}" />
+
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact" collapsible="false">
+
+                    <apex:inputText value="{!con.Lastname}" />
+
+                    <apex:inputText value="{!con.firstName}" />
+
+                    <apex:inputText value="{!con.email}" />
+
+                    <apex:inputText value="{!con.otherphone}" />
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

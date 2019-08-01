@@ -1,0 +1,55 @@
+<apex:page >
+    Constructor:
+    --------------
+    1. It is a special method defined in the class .
+    2. Method name will be same as classname
+    3. This will called only once's i.e at the time of creating a object.
+    4. This will not have any return type 
+    	className(parameters){
+    
+    	}
+    5. This is used to handle the initilization work 
+    
+    6. Constructor will be automatically invoked when we create a object.
+    
+    Example :
+    	public class Example{
+    		public Example(){
+    
+    		}
+    		
+    	}
+    
+    1. Create a class Employee with a constuctor 
+    	public class Employee{
+    		public Employee(){
+    
+    		}
+    	}
+    2. Create a class InvoiceDetails with a constructor 
+    		public class InvoiceDetails{
+    			public InvoiceDetails(){
+    
+    			}
+    		}
+    
+    3. Create a class AccountInfo with a constructor
+    		public class AccountInfo{
+    			public AccountInfo(){
+    
+    			}
+    		}
+    
+    4. Create a class Student with a constructor
+    		public class Student{
+    			public Student(){
+    			}
+    		}
+    	
+    Note : if class doesnt contain the constructor then system will create one dummy 
+    	   constructor 
+    		
+    		className(){
+    			;
+    		}
+</apex:page>

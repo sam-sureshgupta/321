@@ -1,0 +1,204 @@
+<apex:page >
+    Set: 
+    -----
+    1. Set is a collection of simillar elements .
+    2. Size of the set can grow or reduce dynamically based on run-time requirement.
+    3. Set will not accept duplicate values
+    4. Set will will not maintain insertion order.
+    5. syntax  :
+    	<!--
+           Set<T> variableName ;
+		   Set<Integer> ages ;
+		   Set<String> names ;
+		   Set<Decimal> salaries 
+		   Set<Account> accounts;
+		   Set<Contact> contacts;
+        -->
+    6. Initialize the set 
+    	<!--
+			Set<Integer> ages =new Set<Integer>();
+			Set<Decimal> salaries =new Set<Decimal>();
+			Set<Account> accounts =new Set<Account>();
+			Set<Contact> contacts =new Set<Contact>();
+		-->
+    
+    7. Methods : 
+    	a. add(ele) : 
+    	   1. This method will add new element to the set .
+    		<!--
+				Set<Integer> mySet =new Set<Integer>();
+                mySet.add(40);
+                mySet.add(30);
+                mySet.add(30);
+                mySet.add(10);
+                mySet.add(20);
+                System.debug('Set :'+mySet);
+
+			-->
+    	b. addAll(set/list)
+    	   1. This will add list of elements to a set or set of elements to a set 
+    	   <!--
+				List<Integer> ages =new List<Integer>{40,30,30,10,20};
+                Set<Integer> myAges =new Set<Integer>();
+                myAges.add(99);
+                myAges.add(88);
+                myAges.addAll(ages);	// all the elements which are in ages are added to MyAges
+                System.debug('MyAges : '+myAges);	
+				OP:  10,20,30,40,88,99
+
+		   -->
+    
+    	 c. remove(ele) :
+    		1. This will remove the element from the Set 
+    		<!--
+					Set<Integer> ages =new Set<Integer>{10,20,30,40,50};
+					ages.remove(30);
+					System.debug(ages); 	10,20,40,50
+					ages.remove(40);		10,20,50
+			-->
+    
+    	d. removeAll(set/List)
+    		1. This will remove list or set of elements from the given set .
+    		<!--
+				List<Integer>  myList =new List<Integer>{10,20,30,40,50};
+                System.debug('MyList :'+myList);
+                Set<Integer> mySet=new Set<Integer>{10,20,30,55,66,77};
+                System.debug('My Set :'+mySet);
+                mySet.removeAll(myList);
+				System.debug('New Set :'+mySet);	// 55,66,77
+			-->
+    
+    	e. contains(ele) :
+    		1. This will return true ,if the set contains the given element 
+    		<!--
+				Set<Integer> ages =new Set<Integer>{10,20,30,40};
+				Boolean b =ages.contains(20);
+				System.debug(b);	// true
+				Boolean c =ages.contains(90);
+				System.debug(c);		// false
+			-->
+    
+    	f. containsAll(set/list) :
+    		1. This will return true,if the set contains all the elements in given list or set
+    		<!--
+				List<Integer> list1 =new List<Integer>{10,20,30,40};
+                List<Integer> list2 =new List<Integer>{20,40,30,10};
+                Set<Integer> mySet =new Set<Integer>{10,20,30,40,90};
+                
+                Set<Integer> ages =new Set<Integer>{10,20,30,40,50,60};
+                // This will return true if all the elememts in the list1 are in set : ages 
+                Boolean b =ages.containsAll(list1);
+                Boolean c =ages.containsAll(list2);
+                Boolean d =ages.containsAll(mySet);
+                System.debug('List1:'+b);
+                System.debug('List2:'+c);
+                System.debug('List3:'+d);
+			-->
+    
+    	g. size() : 		
+    		1. This will return count of no of elements in the set 
+    
+    	h.  clear(): 
+    		1. This will remove all the elememts in the set 
+    
+    	i . isEmpty(): 
+    		1. It will return true, if the set is empty 
+ <!--   
+    
+Example :1 
+1. Write a query to fetch all the accounts with name,phone,industry 
+List<Account> accounts =[select Id,Name,Phone ,Industry from Account ];
+
+2. Create a set which will store all the account names 
+Set<String> accNames =new Set<String>();
+
+3. Take one by one account from the list and add thier names in the set 
+
+for(Account a: accounts){
+	accNames.add(a.name);
+}
+
+
+Example :2 
+1. Write a query to fetch all the accounts with name ,phone ,industry
+2. Create a set to store accountNames 
+3. from the above list of accounts get the account names of those accounts whose industry is energy
+
+List<Account> accounts =[select id,Name,Phone,Industry from Account];
+Set<String> accNames =new Set<String>();
+for(Account a: accounts){
+	if(a.industry=='Energy'){
+		accNames.add(a.name);
+	}
+}
+
+Example 3: 
+1. Write a soql query and fetch all the accounts 
+2. Get all those accounts whose industry is energy in as separate Set
+    
+List<Account>  accounts =[select Id,Name,Phone,Industry from Account];
+Set<Account> mySet =new Set<Account>();
+for(Account a: accounts){
+    if(a.industry=='Energy'){
+        mySet.add(a);
+    }
+}
+System.debug(mySet);
+
+Example 4: 
+1. Write a soql to fetch all the opportunties 
+2. Put all the opportunity names in a list 
+3. Put all the amounts in the a  list 
+4. put all the all names in the list to set 
+5. sum the all the amounts in the list
+
+List<Opportunity> optyList =[select id,Name,Amount from Opportunity];
+
+List<String> names =new List<String>();
+List<Decimal> amounts =new List<Decimal>();
+for(Opportunity op:optyList){
+    names.add(op.name);
+    amounts.add(op.amount);
+    
+}
+Set<String> mySet =new Set<String>();
+mySet.addAll(names);
+
+Decimal total=0;
+for(Decimal a: amounts){		// 10000.00		20000.00	30000.00
+    total=total+a;											|--a
+}
+
+
+Example 5:
+1. Create a wrapper class Employee with lastName,firstName,phone,email 
+    
+2. Write a soql query on contact and fetch lastName,firstName,Phone,Email 
+ 
+3. Take one by one contact and create Employee based on the data in the contact and add it to set
+    
+    
+    public class Employee {
+        public String lastName;
+        public String firstName;
+        public String phone;
+        public String email;
+    }
+
+List<Contact> contacts =[select FirstName,LastName,Phone,Email from Contact];
+
+Set<Employee> employees =new Set<Employee>();
+
+for(Contact c:contacts){
+    
+    Employee e =new Employee();
+    e.LastName=c.LastName;
+    e.firstName=c.firstName;
+    e.Phone=c.Phone;
+    e.Email =c.Email;
+    employees.add(e);
+}
+
+-->  
+    
+</apex:page>

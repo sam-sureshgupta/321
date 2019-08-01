@@ -1,0 +1,52 @@
+<!--
+Apex:form: 
+-----------
+1. Any component that require user interaction should be defined with in the apex:form
+2. Example : 
+	buttons ,links, inputs ,etc
+apex:commandButton : 
+--------------------
+1. This is a child of apex:form
+2. This will create a button on the page 
+3. Attributes 
+	SNO		Name		Type				Description
+	1.		value		String 				1. This will be displayed on the button as label.
+
+	2.		disabled	Boolean				1. If it is set as true, button will be displayed in disabled mode.
+											2. If it is set as false,button will be displayed in enabled mode.	
+											3. Default value is false.
+
+	3. 		rendered	Boolean				1. If it is set as true, button will be displayed in the page.
+											2. If it is set as false,button will be hidden in the page.
+
+	4.		title		String				1. when we keep the cursor tip on the button this label will be 
+										   	   displayed on the pop-up window
+
+	5.		action		Apexpages.Action	1. When we click on the button what is the action that should be 
+											   performed is defined here 
+											2. Possible actions are methods from Apex class or standardActions
+														or 
+												url of the page 
+
+	6. 		Style		CSS					1. If you want to define any css then we can use this 
+
+	
+	7.		reRender	String				1. When we click on the button entire page will re-load.
+											2. If you dont want entire page to be re-loaded then 
+											   you can specify the Id of the element which should be 
+											   reloaded.
+
+-->
+<apex:page >
+    <apex:form >
+      <apex:commandButton />
+        <apex:commandButton value="CallMe"/>
+        <apex:commandButton value="InvokeMe" disabled="true"/>
+        <apex:commandButton value="Testing" rendered="false"/>
+        <apex:commandButton value="Refresh" reRender="fm"/>
+        <apex:commandButton value="MyButton" title="Cursor Tip" />
+        <apex:commandButton value="OpenPage" action="/apex/Page_One"/>
+        <apex:commandButton value="MyStyle" style="background:yellow;color:red;width:50px"/>
+    </apex:form>
+  
+</apex:page>

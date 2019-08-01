@@ -1,0 +1,5 @@
+<apex:page controller="Apex_Employee_22">
+    Name       : {!name}  <br/><br/>
+    Experience : {!exp}   <br/><br/>
+    Salary     : {!salary}
+</apex:page>

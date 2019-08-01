@@ -1,0 +1,87 @@
+<apex:page >
+    1.  +,-,*,%	
+    2. = , == , === 
+    3. <!--		<,>,<=,>= 		-->
+    4. <!--		&&	,|| ,!   -->
+    5. condition? stmt1:stmt2
+    
+    a=10;  assigning 10 to the variable a 
+    a==10; comparing value of a is equals to 10 
+    		lhs==rhs : it checks lhs value and rhs value are same or not
+    				 : It gives true if both are equal
+    
+lhs === rhs  : This will return true,if address location of lhs element and rhs element are same .
+    
+    Examples
+    1. is City is Hyd 
+    	city =='Hyd'
+    
+    2. industry value equals to energy 
+    	industry =='Energy'
+    
+    3. rating value equals to Hot 
+    	rating =='Hot'
+    
+    4. annualRevenue  is greater than 50k
+    	annualRevenue > 50000
+    
+    5. industry not equals to Energy 
+    	 industry!='Energy'
+    
+    6. rating not equals to warm
+    	rating !='Warm'
+    
+    7. city is blank
+    	city ==''
+    
+    8. age is null
+    	age == null
+    
+    9. phone not equals to null
+    	phone !=null
+    
+    10. place not equals to blank
+    		place !=''
+    
+    11. Cost lessthan or equals to 30k
+    <!--		cost <= 30000		-->
+    
+    12. Salary greater than  or equals to 60k
+    	salary >= 60000
+    
+    Logical Operators:
+    ---------------------
+   <!--
+
+		cond1  && cond2 	: it will return true if all the conditions are true 
+
+		cond1 || cond2      : it will return true,if any one the statement is true
+
+	Example : 
+	1.industry is Banking and rating is hot 
+		industry =='Banking' && rating=='Hot'
+
+	2. stageName equals to Closed won  or closed lost 
+			stageName =='Closed Won' || stageName=='Closed Lost'
+
+	3. CloseDate  less than 10-May -2019 and StageName not equals to prospecting 
+			closeDate < Date.newInstance(2019,5,10)	 && stageName !='Prospecting'
+
+	4. leadSouce is web and rating is hot 
+			leadSource =='Web' && rating =='Hot' 
+
+	5. Status is open or priority is High
+			status=='Open' || priority=='High'
+
+	6. origin is Web and status is closed 
+			origin=='Web' && status =='Closed' 
+
+	7.	CloseDate is today and stageName is closed won 
+				 or 
+		closeDate is 15 days from today and stageName is prospecting
+
+		( closeDate==System.today() && stageName=='Closed Won') || 
+					(closeDate == System.today()+15 && stageName=='Prospecting')
+	-->
+    
+</apex:page>

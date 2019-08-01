@@ -1,0 +1,23 @@
+<!--
+Message : 
+1. It is a pre-defined apex class.
+2. This is defined under the namespace of Apexpages.
+3. This is used to genrate the messages and add to the pages.
+4. Syntax : 
+	Apexpages.Message(Apexpages.Severity.Type,message)
+	Type : CONFIRM  
+		 : ERROR 
+	     : WARNING 
+	     : INFO 
+
+5. Once the messsge is created then add the message to current page by using 
+		Apexpages.addMessage(msg);
+
+6. If you want to display those messages on the VF page then add 
+<apex:pageMessages / > on the VF 
+
+-->
+
+<apex:page controller="Apex_Page_Message">
+    <apex:pageMessages />
+</apex:page>

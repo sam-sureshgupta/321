@@ -1,0 +1,14 @@
+<apex:page controller="SOQL_32_Example_4">
+    <apex:form id="fm">
+        <apex:inputText value="{!searchText}"  />
+        <apex:commandButton value="Search" action="{!search}" reRender="fm" />
+    	<apex:pageBlock title="Account" rendered="{! !ISNULL(accounts)}">
+        	<apex:pageBlockTable value="{!accounts}" var="a">
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.industry}" />
+                <apex:column value="{!a.rating}" />
+                <apex:column value="{!a.type}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

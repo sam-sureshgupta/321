@@ -1,0 +1,18 @@
+<apex:page >
+    <apex:sectionHeader title="SelectRadio"/>
+    <apex:form >
+       <apex:selectRadio >
+           <apex:selectOption itemLabel="Hyd" itemValue="Jave"/>
+           <apex:selectOption itemLabel="Ban" itemValue="SDFC"/>
+           <apex:selectOption itemLabel="Che" itemValue="DevOps"/>  
+       </apex:selectRadio>      
+    </apex:form>
+    <apex:sectionHeader title="Input Checkboxes"/>
+    <apex:form >
+       <apex:selectCheckboxes >
+           <apex:selectOption itemLabel="Hyd" itemValue="Jave"/>
+           <apex:selectOption itemLabel="Ban" itemValue="SDFC"/>
+           <apex:selectOption itemLabel="Che" itemValue="DevOps"/>  
+       </apex:selectCheckboxes>      
+    </apex:form>
+</apex:page>

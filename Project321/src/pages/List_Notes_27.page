@@ -1,0 +1,311 @@
+<apex:page >
+    List: 
+    ------
+    1. It is collection of simillar elements 
+    2. Size of the list can grow or decrease based on run-time requirement.
+    3. Elements in the list are reffered using index.
+    4. Index start with zero.
+    5. List accept duplicate values 
+    6. List maitains insertion order.
+    7. Syntax : 
+        <!--
+            List<T> listName;
+            Note : T can be any dataType 
+            
+            Example : 
+            List<Integer> ages ;
+            List<String> names ;
+            List<Decimal> salaries;
+            List<Account> accounts ;
+            List<Contact> contacts ;
+        -->
+    
+    8. Constructor : 
+        <!--
+            1. List<T> ():  This will create a new List 
+            2. List<T>(List/Set) : This will create list with given elements in the list /set whcih is given as parameters
+            Example :1
+            List<Integer> ages =new List<Integer>();
+
+            Example :2
+            Set<Integer> values =new Set<Integer>{10,20,30};
+            List<Integer> ages =new List<Integer>(values);
+        -->
+    
+    9. Methods : 
+        a. isEmpty(): 
+           1. This method will return true, if the list is empty 
+           2. This method will return false if the list is not empty
+           <!--
+                List<Integer> ages =new List<Integer>();
+                Boolean flag =ages.isEmpty();
+                System.debug('Ages:'+flag); // true
+
+                List<Integer> ages =new List<Integer>{10,20,30};
+                Boolean a =ages.isEmpty();
+`               System.debug('Ages:'+a); // false
+           -->
+    
+        b. add(ele) : 
+            1. This method will add new element to the list.
+            2. New element is added at the last position in the list.
+             <!--
+               List<Integer> ages =new List<Integer>();
+                Integer a=10;
+                ages.add(a);
+                Integer b =20;
+                ages.add(b);
+                ages.add(30);
+                ages.add(30);
+                System.debug(ages);
+
+                  0      1      2     3
+                -----------------------------
+                 |  10  |  20  |  30  | 30   
+                 ----------------------------
+               -->
+    
+      c. add(index,ele) :
+         1. This will add new element at the given index .
+             <!--
+                List<Integer> ages =new List<Integer>();
+                ages.add(10);
+                ages.add(20);
+                ages.add(30);
+                ages.add(40);
+                   0    1     2     3
+                -------------------------
+                | 10  | 20  | 30  | 40 |
+                ------------------------
+                ages.add(1,90);
+                   0    1     2     3    4 
+                ------------------------------
+                | 10  | 90  | 20  | 30  | 40 |
+                ------------------------------
+
+                ages.add(0,80);
+                   0    1      2       3    4     5
+                -------------------------------------
+                | 80 |  10  | 90    | 20  | 30  | 40 |
+                --------------------------------------
+                
+             -->
+     d. size()  :
+        1. This method will return count of no of the elements in the list 
+        <!--
+                List<Integer> ages =new List<Integer>();
+                ages.add(10);
+                ages.add(20);
+                ages.add(30);
+                ages.add(40); 
+                Integer count =ages.size();  // 4
+                
+        -->
+    
+    e. get(index) : 
+        1.This will return the element at the given index 
+        <!--
+                List<Integer> ages =new List<Integer>();
+                ages.add(10);
+                ages.add(20);
+                ages.add(30);
+                ages.add(40);
+                ages.add(50);
+                ages.add(60);
+                    0       1      2     3    4     5
+                ------------------------------------------
+                |   10   | 20   | 30  | 40  | 50  | 60  |
+                -----------------------------------------
+                Integer a =ages.get(1); 
+                System.debug('Index 1:'+a);  // Index 1: 10
+                
+                Integer a =ages.get(4); 
+                System.debug('Index 4:'+a);  // Index 4: 50
+
+                Example : 
+                List<Account>  accounts =[select Id,Name,Phone from Account limit 4];
+
+                Integer i=0;
+                for(Account a: accounts){
+                    System.debug('Index ===>'+i);
+                    System.debug('Name :'+a.Name+' ==Phone:'+a.phone);
+                    i=i+1;
+                }
+                
+                Account x =accounts.get(1);
+                System.debug('Name :'+x.name+' :Phone:'+x.phone);
+                
+                Account y =accounts.get(3);
+                System.debug('Name :'+y.name+' :Phone:'+y.phone);
+        -->
+    f. remove(index) : 
+        1. This method will remove the elements which is at given index. 
+        <!--
+                List<Integer> ages =new List<Integer>();
+                ages.add(10);
+                ages.add(20);
+                ages.add(30);
+                ages.add(40);
+                ages.add(50);
+                ages.add(60);
+
+                System.debug(ages);
+
+                    0       1      2     3    4     5
+                ------------------------------------------
+                |   10   | 20   | 30  | 40  | 50  | 60  |
+                -----------------------------------------
+
+                ages.remove(1);
+                System.debug('After romoving 1:'+ages);
+                
+                    0       1      2     3    4     
+                ----------------------------------
+                |   10   | 30  | 40  | 50  | 60  |
+                ----------------------------------
+
+                ages.remove(2);
+                System.debug('After romoving 2:'+ages);
+
+                    0       1      2     3     
+                ------------------------------
+                |   10   | 30  |  50  | 60  |
+                ------------------------------              
+                   
+        -->
+    g. clear() : 
+        1. This method will remove all the elements in the list
+        <!--
+            List<Integer> ages =new List<Integer>();
+                ages.add(10);
+                ages.add(20);
+                ages.add(30);
+                ages.add(40);
+                ages.add(50);
+                ages.add(60);
+                System.debug(ages); // 10,20,30,40,50,60
+                ages.clear();
+                System.debug(ages); //  ()
+        -->
+    
+    h. contains(ele) :
+        1. This method will return true, if the list contains the given element 
+        2. Returns false if the list doesnt contain the element
+        <!--
+                List<Integer> ages =new List<Integer>();
+                ages.add(10);
+                ages.add(20);
+                ages.add(30);
+                ages.add(40);
+                ages.add(50);
+                ages.add(60);           
+                System.debug(ages);
+                Boolean b =ages.contains(40);
+                System.debug('Contains 40 :'+b);
+                Boolean c=ages.contains(90);
+                System.debug('Contains 90:'+c);
+
+     Note : If we are trying the check data in the table, Id of the record should match. 
+
+                List<Account> accounts =[select Id,Name from Account ];
+                Account a =new Account();
+                a.Name='TCS';
+                a.Rating='Warm';
+                Boolean flag=accounts.contains(a);
+                System.debug('Contains flag :'+flag);  // false 
+                
+                Account x =[select Id,Name from Account where name='TCS'];
+                Boolean one =accounts.contains(x);
+                System.debug('Contains flag :'+one);    // true
+                
+                Account y=new Account();
+                y.name='TCS';
+                y.Id=x.Id;
+                Boolean two =accounts.contains(y);
+                System.debug('Contains flag:'+two);  / true
+
+      Note : if the data is not inserted to the table then data will be compared  and return 
+             true ,if the data is matching. 
+
+                Account a1 =new Account(Name='TCS',Phone='040-123');
+                Account a2 =new Account(Name='Dell',Phone='030-123');
+                Account a3 =new Account(Name='Capital',Phone='050-123');
+                List<Account> accounts =new List<Account>{a1,a2,a3};
+                    
+                    
+                Account x =new Account(Name='TCS',Phone='040-1234');
+                Account y=a1;
+                Boolean a =accounts.contains(x);    // true // false when 4 is added to end of phone value
+                System.debug('Contains:'+a);
+                Boolean b =accounts.contains(y);
+                System.debug('Contains:'b+); //true
+                            
+        -->
+    
+    i. indexOf(element) : 
+        1. This will return index of first occurence of the given element,
+        <!--
+                List<Integer> ages =new List<Integer>();
+                ages.add(10);
+                ages.add(20);
+                ages.add(30);
+                ages.add(40);
+                ages.add(50);
+                ages.add(60);
+                ages.add(50);
+                System.debug(ages); // 10,20,30,40,50,60,50 
+                    0       1      2    3     4     5     6
+                ----------------------------------------------
+                |   10   | 20   | 30  | 40  | 50  | 60  | 50 |
+                ---------------------------------------------
+
+                Integer x =ages.indexOf(50);
+                System.debug(x); : 4
+        -->
+    
+    j. sort() : 
+        1. This will sort the data in the ascending order 
+     
+        <!--
+            List<Integer> ages =new List<IntegeR>{90,20,40,30,50};
+             ages.sort();
+             System.debug('Ages:=='+ages);
+
+           List<String> names =new List<String>{'Wilson','Sravani','Swetha','Ravi','Neha','Sam','Satish'};
+            names.sort();
+            System.debug('Name :==='+names);
+
+            Account a1 =new Account(Name='TCS',Phone='040-123');
+            Account a4 =new Account(Name='Dell',Phone='060-123');
+            Account a5=new Account(Name='Dell',Phone='030-123',Industry='Education',Rating='Hot');
+            Account a2 =new Account(Name='Dell',Phone='030-123',Industry='Energy');
+            Account a3 =new Account(Name='Capital',Phone='050-123');
+
+          List<Account> accounts =new List<Account>{a1,a2,a3,a4,a5};
+            accounts.sort();
+            System.debug('Accounts ==>'+accounts);
+        --> 
+    
+    k. addAll(list/set)
+    
+       1. This will add list of elements to a list or set of elements to a list. 
+     
+Exercise :2
+    1. Create a wrapper class AccountData 
+            Account acc 
+            Boolean flag
+    
+    2. Write the soql query and fetch all the account records 
+        <!--    List<Account> accounts =[select Name,Phone,Industry from Account ]; -->
+    3. Convert the list of accounts to list of AccountData and display
+            for(Account a: accounts){
+                Account_Data ad =new Account_Data();
+                ad.acc=a;
+                ad.flag=false;
+                // add th record to list of Account_Data 
+            }
+Exercise :3 
+    1. Create VF page to insert new Contact 
+    2. if Contact table has more than 30 records then we need to get error message we cannot insert new records.
+     
+</apex:page>

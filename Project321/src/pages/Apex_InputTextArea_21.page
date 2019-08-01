@@ -1,0 +1,27 @@
+<apex:page >
+    <apex:sectionHeader title="InputTextArea"/>
+    <apex:form >
+       <apex:inputTextArea />       
+    </apex:form>
+    
+    <apex:sectionHeader title="InputTextArea" subtitle="Rows"/>
+    <apex:form >
+       <apex:inputTextArea rows="5"/>       
+    </apex:form>
+    
+    <apex:sectionHeader title="InputTextArea" subtitle="Cols"/>
+    <apex:form >
+       <apex:inputTextArea cols="40"/>       
+    </apex:form>
+    
+    <apex:sectionHeader title="InputSecret"/>
+    <apex:form >
+       <apex:inputSecret />       
+    </apex:form>
+    
+    <apex:sectionHeader title="InputHidden"/>
+    <apex:form >
+       <apex:inputHidden />       
+    </apex:form>
+  
+</apex:page>

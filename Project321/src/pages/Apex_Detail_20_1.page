@@ -1,0 +1,12 @@
+<apex:page standardController="Contact">
+    
+<!--    <apex:detail subject="{!Contact.AccountId}"/> -->
+<!-- 
+       in the url of the page we need to pass values of name and phone 
+		/apex/Apex_Detail_1?name=satish&phone=1233        
+-->
+    
+    Name : {!$CurrentPage.parameters.name} <br/><br/>
+    Phone : {!$CurrentPage.parameters.phone} <br/><br/>
+    <apex:detail subject="{!$CurrentPage.parameters.recordId}" />
+</apex:page>

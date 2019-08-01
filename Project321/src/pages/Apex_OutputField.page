@@ -1,0 +1,15 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageBlock title="{!Account.Name}">
+            <apex:inlineEditSupport >
+            <apex:pageBlockSection title="Basic Details">
+                <apex:outputField value="{!Account.Name}"/>
+				<apex:outputField value="{!Account.Phone}"/>
+				<apex:outputField value="{!Account.Industry}"/>
+                <apex:outputField value="{!Account.Rating}"/>
+                <apex:outputField value="{!Account.Ownership}"/>                
+            </apex:pageBlockSection>
+            </apex:inlineEditSupport> 
+        </apex:pageBlock>    
+    </apex:form>
+</apex:page>

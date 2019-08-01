@@ -1,0 +1,73 @@
+<!--
+Author 		:  Suresh Gupta  
+Description	:  Apex_Page properties 
+Version 	:  1.0
+CreatedDate : 
+-->
+<apex:page >
+    <!--
+    Apex:Page :
+    ---------
+    1.page is a pre-defined component .
+    2.apex is a namespace .
+    3.Evey vf page will start and end with apex:page
+    4.Attributes : 
+    	SNO		Name				Type		Description
+    	1	    id 					String 		1. This is a unique string assigned to component
+    											2. Using this id we can reffer to the component/element 
+    													in the page
+    
+    
+    	2		showHeader			Boolean		1. When set as true ,salesforce standard header
+    											   and sidebar wil be displayed
+    											2. When set as false ,StandardHeader and sidebar will be hidden
+    											3. Default value is true
+    
+    
+    	3.		sidebar				Boolean		1. When set as true,salesforce standard sidebar will be displayed
+    											2. When set as false,salesforce standard sidebar will be hidden
+    											3. Default value is true
+    
+    	4.		setup				Boolean		1. When set as true, salesforce force.com setup will be displayed
+    											2. When set as false ,salesforce sidebar components will be displayed
+    											3. Default value is false.
+    
+    
+    	5. 		rendered			Boolean		1. When set as true,content of apex page will be displayed.
+    											2. When set as false ,content will be hidden
+    											3. Default value is true
+    
+    
+    	6. 		action			ApexPages.Action1. This will be invoked when we load/call the page 
+    											2. This can be a url of page or method from apex class.
+    
+   
+    
+    	7.		apiVersion			Number		1. This will specify version of the api we are using 
+    											2. By Default latest version will be applied 
+    											3. Current version is 45.0
+    
+    
+    	8.		renderAs			PDF			1. This will render the conent of the page in the form PDF
+    
+    		
+    	9.		contentType			MIMETYPE	1. This will specify in which form body of the page should 
+    											   be loaded
+    
+    											2. Example :msword#example.doc
+    													   :ms-excel#example.xls	
+    													   :text/html
+    													   :text/csv
+    
+    
+    	10. 	standardController	String		1. This will specify name of the sobject(table) which 
+    							(sobjectName)		we want to use in the page
+    
+    
+    	11. 	controller			String		1. This will specify name of the apex class which we want to use 
+    							(Apex class Name)     in the VF page
+    
+    	12.		readOnly			Boolean		1. Content of the page will be in the readble format.
+-->
+    
+</apex:page>

@@ -1,0 +1,79 @@
+<apex:page >
+<!--
+	1. Write a soql to fetch first 10 records which are created .
+		List<Account> accounts =[Select Name,Phone,Industry from Account Order by CreatedDate  Limit 10];
+
+
+	2. Write a soql to fetch  first 50 records  which are create d from 10 position 
+	List<Account> accounts =[select Name,Phone,Industry from Account order by CreatedDate limit 50 offset 10 ];
+
+	3. Write a soql to fetch last 10 accounts created 
+	List<Account> accounts =[select Id,Name,Phone from Account orderBy CreatedDate DESC limit 10 ];
+
+	4. fetch 10 opportunities from 50 position
+
+	List<Opportunity> optyList =[select id,Name,Amount,StageName from Opportunity limit 10 offsete 50 ];
+-->
+    
+<!--
+    Where <FieldName> [operator]<value>	(=,!=,<>,<,<=,>,>= ,Like , IN ,NOT)
+
+    where name='Wipro'
+	where rating='Hot'
+
+	1. Rating not equals to hot 
+		rating!='Hot'
+	2. Industry is Not equals to Banking 
+		industry!='Banking'
+	3. AnnualRevenue more than 50k
+		annualRevenue > 50000
+	4. AnnualRevenue lessthan or equals to 50k
+    	annualRevenue <= 50000
+    
+	5. FieldName like 'expression'
+
+		% == Any thing 
+		_ == Any one character
+		
+		a. where name starts with s 
+			name like 's%'
+
+		b. Where name ends with s 
+			name like '%s'
+
+		c. where name contains s
+			name like '%s%'
+
+		d. where name contains second character as 's'
+			name like '_s%'
+		
+		e. where name contains third character from last is 's'
+			name like '%s_ _'
+
+	6. AND  | OR 
+
+		where <FieldName> [Operator]<value>[AND|OR] <FieldName> [operator]<value>
+
+		where name='Wipro' and industry!=Energy'
+		where name='Wipro' or industry!=Energy'
+	 
+		Example : 
+		a. industry is Energy and rating is hot 
+			where industry ='Energy' and rating='Hot'
+
+		b. rating is warm and ownership is public 
+			where rating='Warm' and ownership='Public'
+
+	7. IN :
+		where name='Sam' or name='Ram' or name='kiran'
+
+		where name in ('sam','ram','kiran')
+
+		Example : 
+		List<String> myNames =new List<String>{'Sam','Ram','Kiran'};
+		where name in :myNames
+
+		==> List<String> places =new List<String>{'Hyd','Ban','Che','Pune'};
+		where city__c in :places
+-->     
+</apex:page>

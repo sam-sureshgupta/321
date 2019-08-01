@@ -1,0 +1,42 @@
+<!--
+apex:pageBlockTable : 
+1. This is a child component of pageBlock.
+2. This is used to display list of records in the VF page.
+3. It will display the records rowwise.
+4. This will diplay the records in the standard salesforce look and feel
+5. It can display upto 1000 records at a time .
+6. Attributes :
+   SNO 		Name		Type			Description
+   1.		value		Object			1. This will specify list of records which we want to display 
+										2. This will accept only list or array 
+
+   2.		var 		String			1.This is name  of the variable 
+										2.This variable will refferes toone element in the collection 
+                                          of data defined in the value 
+										3. Using this variable we can print the data of the element
+	
+   3.		first		Integer 		1. This will specify from which index we need to display the data 
+
+   4. 		rows		Integer			1. This will specify how many records should be displayed.
+
+
+
+PageBlockTable can display 1000 records at a time 
+if you want to display 10,000 records we can put <apex:page readOnly="true">
+if you want to diplay more 50,000 records  we have put @Reaonly for the method with remote action
+@RemoteAction@Readonly
+public static returnType methodName(){
+
+}
+ajax tool kit
+--> 
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:pageBlock title="AccountList">
+        <apex:pageBlockTable value="{!items}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Industry}"/>
+            <apex:column value="{!a.rating}"/>
+            <apex:column value="{!a.phone}"/>           
+        </apex:pageBlockTable>    
+    </apex:pageBlock>
+</apex:page>
